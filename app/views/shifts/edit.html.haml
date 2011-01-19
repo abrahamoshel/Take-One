@@ -1,0 +1,5 @@
+%h1 Taking #{@shift.name} on #{@shift.date} at #{@shift.starttime}
+%p
+  = link_to 'back', shifts_path
+  = link_to 'show', @shift
+= render 'form'
