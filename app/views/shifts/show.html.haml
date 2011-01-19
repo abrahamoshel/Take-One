@@ -1,0 +1,20 @@
+%h1 Looking at #{@shift.name} on #{@shift.date} at #{@shift.starttime}
+%p
+  = link_to 'back', shifts_path
+  = link_to 'edit', edit_shift_path(@shift)
+
+%dl
+  %dt= Shift.human_attribute_name :name
+  %dd= @shift.name
+  %dt= Shift.human_attribute_name :email
+  %dd= @shift.email
+  %dt= Shift.human_attribute_name :date
+  %dd= @shift.date
+  %dt= Shift.human_attribute_name :starttime
+  %dd= @shift.starttime
+  %dt= Shift.human_attribute_name :endtime
+  %dd= @shift.endtime
+  %dt= Shift.human_attribute_name :takeingname
+  %dd= @shift.takeingname
+  %dt= Shift.human_attribute_name :takingemail
+  %dd= @shift.takingemail

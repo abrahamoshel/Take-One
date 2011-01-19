@@ -1,0 +1,16 @@
+%html
+%head
+  %title
+    Takeone
+
+  = javascript_include_tag :defaults 
+  = csrf_meta_tag 
+  = formtastic_stylesheet_link_tag 
+  = include_stylesheets :common, :workspace, :media => 'all'
+  = include_javascripts :workspace 
+
+%body
+  .container
+    = yield
+
+
