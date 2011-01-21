@@ -5,35 +5,34 @@
       %ul
       - @shift.errors.full_messages.each do |msg|
         %li= msg
+  .span-10.push-7.clear
+    .field.success
+      = f.label :name, :label => 'Giver\'s Full Name:'
+      %br
+      = f.text_field :name, :label => 'Giver\'s Apple Email', :class => "title"
+    .field.info
+      = f.label :email
+      %br
+      = f.text_field :email, :class => "title"
+    .field.info
+      = f.label :date, :lable => 'Shift is on'
+      %br
+      = f.date_select :date, :class => "title"
+    .field.info
+      .span-4= f.label :starttime, :label => 'Start Time'
+      .span-4= f.label :starttime, :label => 'End Time'
+      %br
+        .span-4 #{f.time_select :starttime, :class => "title"}
+        .span-4.clearafter #{f.time_select :endtime, :class => "title"}
+      %p.clear
+    .field.error
+      = f.label :takeingname, :label => 'Taker\'s Full Name:'
+      %br
+      = f.text_field :takeingname, :class => "title"
+    .field.info
+      = f.label :takingemail, :label => 'Taker\'s Apple Email'
+      %br
+      = f.text_field :takingemail, :class => "title"
 
-  .field
-    = f.label :name, :label => 'Givers Full Name:'
-    %br
-    = f.text_field :name, :label => 'Givers Apple Email', :class => "help"
-  .field
-    = f.label :email
-    %br
-    = f.text_field :email
-  .field
-    = f.label :date, :lable => 'Shift is on'
-    %br
-    = f.date_select :date
-  .field
-    = f.label :starttime, :label => 'Shift Starts at:'
-    %br
-    = f.time_select :starttime
-  .field
-    = f.label :endtime, :label => 'Shift Ends at:'
-    %br
-    = f.time_select :endtime
-  .field
-    = f.label :takeingname, :label => 'Takers Full Name:'
-    %br
-    = f.text_field :takeingname
-  .field
-    = f.label :takingemail, :label => 'Takers Apple Email'
-    %br
-    = f.text_field :takingemail
-
-  .actions
+  .actions.span-4.push-10.clear
     = f.submit
