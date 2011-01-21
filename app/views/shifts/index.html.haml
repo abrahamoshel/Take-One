@@ -6,8 +6,7 @@
       %th Name
       %th Apple Email
       %th Date
-      %th Starting Time
-      %th Ending Time
+      %th Time
       %th Takers Name
       %th Takers Apple Email
       %th{:colspan => 3} Actions
@@ -17,37 +16,11 @@
     %tr
       %td= f.name
       %td= f.email
-      %td= f.date
-      %td= f.starttime
-      %td= f.endtime
+      %td= f.date.strftime('%a, %b %d, %Y')
+      %td #{f.starttime.strftime('%I:%M %p')} - #{f.endtime.strftime('%I:%M %p')}
       %td= f.takeingname
       %td= f.takingemail
-      %td.action= link_to 'show', f
-      %td.action= link_to 'edit', edit_shift_path(f)
-      %td.action= link_to 'destroy', f, :method => :delete, :confirm => "Are you sure?" 
+      %td.action= link_to 'show', f, :class => 'button'
+      %td.action= link_to 'edit', edit_shift_path(f), :class => 'button'
+      %td.action= link_to 'destroy', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button' 
 
-%table
-  %thead
-    %tr
-      %th= Shift.human_attribute_name :name
-      %th= Shift.human_attribute_name :email
-      %th= Shift.human_attribute_name :date
-      %th= Shift.human_attribute_name :starttime
-      %th= Shift.human_attribute_name :endtime
-      %th= Shift.human_attribute_name :takeingname
-      %th= Shift.human_attribute_name :takingemail
-      %th{:colspan => 3}= t 'actions'
-  
-  %tbody
-    - for shift in @shifts
-      %tr{ :class => cycle(:odd, :even) }
-        %td= shift.name
-        %td= shift.email
-        %td= shift.date
-        %td= shift.starttime
-        %td= shift.endtime
-        %td= shift.takeingname
-        %td= shift.takingemail
-        %td.action= link_to t('show'), shift
-        %td.action= link_to t('edit'), edit_shift_path(shift)
-        %td.action= link_to t('destroy'), shift, :confirm => t('are_you_sure'), :method => :delete

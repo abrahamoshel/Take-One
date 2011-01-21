@@ -1,0 +1,27 @@
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => "text/html; charset=utf-8"}
+    %style{'type' => 'text/css'}
+      = @css
+    
+  %body
+    #content{'style' => 'background:transparent url(bg.jpg) no-repeat;'}
+      %h2 Give One, Take One has just completed a shift switch
+      %p 
+        %strong #{@shift.takeingname} 
+        just took 
+        %strong #{@shift.name}
+        %br/ 
+        on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
+      %p
+        An Email has already been sent to:
+        %ul
+          %li NMA Schedule - nma_schedule@apple.com
+          %li #{@shift.takeingname} - #{@shift.takingemail}
+          %li #{@shift.name} - #{@shift.email}
+      /= image_tag attachments['rails.png'].url
+      %table
+        %tr{'style' => 'background-color:;'}
+          %td{'style' => 'font-size:30px;', 'height' => '200px', 'width' => '200px'}
+            /Hello World!
+        %tr
