@@ -1,4 +1,11 @@
 %h1 Give One Take One:
+
+- unless flash[:notice].blank?
+  %div.success
+    = notice
+- unless flash[:alert].blank?
+  %div.success
+    = alert
 %p= link_to 'Give a New Shift', new_shift_path
 %table
   %thead
@@ -23,4 +30,3 @@
       %td.action= link_to 'show', f, :class => 'button'
       %td.action= link_to 'edit', edit_shift_path(f), :class => 'button'
       %td.action= link_to 'destroy', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button' 
-
