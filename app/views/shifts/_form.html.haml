@@ -1,10 +1,10 @@
 = semantic_form_for @shift do |f|
   - if @shift.errors.any?
-    #errorExplanation
-      %h2= "#{pluralize(@shift.errors.count, 'error')} prohibited this user from being saved:"
+    #errorExplanation.error.clear.span-10.push-7
+      %h3= "#{pluralize(@shift.errors.count, 'error')} prohibited this Shift from being saved:"
       %ul
-      - @shift.errors.full_messages.each do |msg|
-        %li= msg
+        - @shift.errors.full_messages.each do |msg|
+          %li= msg
   .span-10.push-7.clear
     .field.success
       = f.label :name, :label => 'Giver\'s Full Name:'

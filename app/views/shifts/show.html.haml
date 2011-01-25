@@ -1,5 +1,12 @@
 %h3.centered Looking at #{@shift.name} on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
 .span-10.push-7
+  - unless flash[:notice].blank?
+    %div.success
+      = notice
+  - unless flash[:alert].blank?
+    %div.success
+      = alert
+
   %strong= 'Giver\'s Name'
   %dd.success= @shift.name
   %strong= 'Giver\'s Email'
@@ -16,5 +23,4 @@
 %p.span-4.push-10.clear
   = link_to 'back', shifts_path, :class => "button"
   = link_to 'edit', edit_shift_path(@shift), :class => "button"
-
 
