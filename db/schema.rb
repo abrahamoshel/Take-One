@@ -13,13 +13,16 @@
 ActiveRecord::Schema.define(:version => 20110115054849) do
 
   create_table "shifts", :force => true do |t|
-    t.string   "name"
+    t.string   "firstName"
+    t.string   "lastName"
     t.string   "email"
+    t.string   "shiftType"
     t.date     "date"
     t.time     "starttime"
     t.time     "endtime"
-    t.string   "takeingname"
-    t.string   "takingemail"
+    t.string   "takingFirstName"
+    t.string   "takingLastName"
+    t.string   "takingEmail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,6 @@
+%hr.space
 %h1 Give One Take One:
+/=image_tag('apple/rails.png')
 
 - unless flash[:notice].blank?
   %div.success
@@ -6,12 +8,13 @@
 - unless flash[:alert].blank?
   %div.success
     = alert
-%p= link_to 'Give a New Shift', new_shift_path
+%p= link_to 'Give a New Shift', new_shift_path, :class => "button"
 %table
   %thead
     %tr
       %th Name
       %th Apple Email
+      %th Shift Type
       %th Date
       %th Time
       %th Takers Name
@@ -21,12 +24,13 @@
  
   - @shifts.each do |f|
     %tr
-      %td= f.name
+      %td #{f.firstName} #{f.lastName}
       %td= f.email
+      %td= f.shiftType
       %td= f.date.strftime('%a, %b %d, %Y')
       %td #{f.starttime.strftime('%I:%M %p')} - #{f.endtime.strftime('%I:%M %p')}
-      %td= f.takeingname
-      %td= f.takingemail
-      %td.action= link_to 'show', f, :class => 'button'
-      %td.action= link_to 'edit', edit_shift_path(f), :class => 'button'
-      %td.action= link_to 'destroy', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button' 
+      %td #{f.takingFirstName} #{f.takingLastName}
+      %td= f.takingEmail
+      %td.action= link_to 'view', f, :class => 'button'
+      %td.action= link_to 'take', edit_shift_path(f), :class => 'button'
+      %td.action= link_to 'remove', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button' 

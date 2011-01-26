@@ -5,18 +5,33 @@
       = @css
     
   %body
-    #content
-      %h2 Give One, Take One has just completed a shift switch
-      %p 
-        %strong #{@shift.takeingname} 
-        just took 
-        %strong #{@shift.name}
-        %br/ 
-        on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
-      %p
-        An Email has already been sent to:
-        %ul
-          %li NMA Schedule - nma_schedule@apple.com
-          %li #{@shift.takeingname} - #{@shift.takingemail}
-          %li #{@shift.name} - #{@shift.email}
+    %table{'style' => 'border-collapse:collapse; border-spacing: 0px; display:inline; border:0px; cellpadding:0px;'}
+      %tr{:border => 0, :cellpadding => 0}
+        %td{:colspan => 3, :border => 0, :cellpadding => 0}
+          = image_tag attachments['bg1.jpg'].url, :style => "display:block; border:0"
+      %tr
+        %td{:width => '43px'}
+          = image_tag attachments['bg2.jpg'].url, :style => "display:block"
+        %td{:width => '480px'}
+          %h2 Give One, Take One has just completed a shift switch
+          %p 
+            %strong #{@shift.takingFirstName} #{@shift.takingLastName} 
+            just took 
+            %strong #{@shift.firstName} #{@shift.lastName} 
+            shift for
+            %strong #{@shift.shiftType} 
+            %br/ 
+            on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
+          %p
+            An Email has already been sent to:
+            %ul
+              %li NMA Schedule - nma_schedule@apple.com
+              %li #{@shift.takingFirstName} #{@shift.takingLastName} - #{@shift.takingEmail}
+              %li  #{@shift.firstName} #{@shift.lastName} - #{@shift.email}
 
+        %td{:width => '40px'}
+          = image_tag attachments['bg2.jpg'].url, :style => "display:block"
+      %tr
+        %td{:colspan => 3}
+          = image_tag attachments['bg3.jpg'].url, :style => "display:block"
+    

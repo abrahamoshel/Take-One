@@ -73,7 +73,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.find(params[:id])
 
     respond_to do |format|
-      if @shift.update_attributes(params[:shift]) && @shift.takeingname != "" && @shift.takingemail != ""
+      if @shift.update_attributes(params[:shift]) && @shift.takingFirstName != "" && @shift.takingEmail != ""
         #Tell the ShiftMailer to send a Email if someone enters name and email for taking shift
         ShiftMailer.shift_taken(@shift).deliver
 

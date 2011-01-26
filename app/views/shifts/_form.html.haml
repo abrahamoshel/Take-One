@@ -7,13 +7,23 @@
           %li= msg
   .span-10.push-7.clear
     .field.success
-      = f.label :name, :label => 'Giver\'s Full Name:'
-      %br
-      = f.text_field :name, :label => 'Giver\'s Apple Email', :class => "title"
+      .span-5
+        = f.label :firstName, :label => 'Giver\'s First Name:'
+        %br
+        = f.text_field :firstName, :class => "title span-5"
+      .span-4.clearafter
+        = f.label :lastName, :label => 'Giver\'s Last Name:'
+        %br
+        = f.text_field :lastName, :class => "title span-4"
+      %p.clear
     .field.info
       = f.label :email
       %br
       = f.text_field :email, :class => "title"
+    .field.info
+      = f.label :shiftType, :label => "Type of Shift (FRS, Moblie, Red Zone, etc.)"
+      %br
+      = f.text_field :shiftType, :class => "title"
     .field.info
       = f.label :date, :lable => 'Shift is on'
       %br
@@ -26,13 +36,19 @@
         .span-4.clearafter #{f.time_select :endtime, :class => "title"}
       %p.clear
     .field.error
-      = f.label :takeingname, :label => 'Taker\'s Full Name:'
-      %br
-      = f.text_field :takeingname, :class => "title"
+      .span-5
+        = f.label :takingFirstName, :label => 'Taker\'s First Name:'
+        %br
+        = f.text_field :takingFirstName, :class => "title span-5"
+      .span-4.clearafter
+        = f.label :takingLastName, :label => 'Taker\'s Last Name:'
+        %br
+        = f.text_field :takingLastName, :class => "title span-4"
+      %p.clear    
     .field.info
-      = f.label :takingemail, :label => 'Taker\'s Apple Email'
+      = f.label :takingEmail, :label => 'Taker\'s Apple Email'
       %br
-      = f.text_field :takingemail, :class => "title"
+      = f.text_field :takingEmail, :class => "title"
 
   .actions.span-4.push-10.clear
-    = f.submit
+    = f.submit "Take Shift"
