@@ -1,13 +1,16 @@
 class CreateShifts < ActiveRecord::Migration
   def self.up
     create_table :shifts do |t|
-      t.string :name
+      t.string :firstName
+      t.string :lastName
       t.string :email
+      t.string :shiftType
       t.date :date
       t.time :starttime
       t.time :endtime
-      t.string :takeingname
-      t.string :takingemail
+      t.string :takingFirstName
+      t.string :takingLastName
+      t.string :takingEmail
 
       t.timestamps
     end
