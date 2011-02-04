@@ -30,6 +30,14 @@ GEM
     activesupport (3.0.3)
     arel (2.0.7)
     builder (2.1.2)
+    capistrano (2.5.19)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.0.0)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
     closure-compiler (0.3.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -38,6 +46,7 @@ GEM
       activesupport (>= 2.3.0)
       i18n (>= 0.4.0)
     haml (3.0.25)
+    highline (1.6.1)
     i18n (0.5.0)
     jammit (0.5.4)
       closure-compiler (>= 0.1.0)
@@ -51,6 +60,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.1.0)
+    net-ssh-gateway (1.0.1)
+      net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -85,6 +101,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano-ext (~> 1.2.1)
   formtastic (~> 1.1.0)
   haml
   jammit
