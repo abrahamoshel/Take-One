@@ -265,3 +265,8 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clear {clear:both;}
 .clearleft{clear:left;}
 .centered {text-align: center;}
+.container h1{
+  background: transparent url('../../images/PeopleTeamLogo.png') no-repeat;
+  text-indent: -9999px;
+  height: 74px;
+}
