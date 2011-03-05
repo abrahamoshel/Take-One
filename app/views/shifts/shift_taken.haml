@@ -5,13 +5,12 @@
       = @css
     
   %body
-    %table{:width => '640px'}
+    %table{:width => '640px', :style => 'border: 1px solid #CCC; border-radius: 20px; padding: 10px; border-collapse: separate;'} 
       %tr
         %td{:colspan => 3}
-          = image_tag('bg1.jpg')
+          = image_tag('PeopleTeamLogo.png')
       %tr
         %td{:width => '43px'}
-          = image_tag('bg2.jpg')
         %td{:width => '480px'}
           %h2 Give One, Take One has just completed a shift switch
           %p 
@@ -30,8 +29,6 @@
               %li  #{@shift.firstName} #{@shift.lastName} - #{@shift.email}
 
         %td{:width => '40px'}
-          = image_tag('bg2.jpg')
       %tr
         %td{:colspan => 3}
-          = image_tag('bg3.jpg')
      

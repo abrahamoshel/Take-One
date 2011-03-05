@@ -51,4 +51,7 @@
       = f.text_field :takingEmail, :class => "title"
 
   .actions.span-4.push-10.clear
-    = f.submit "Take Shift"
+    - if params[:action] == 'new'
+      = f.submit "Post a Shift"
+    - else
+      = f.submit "Take Shift"

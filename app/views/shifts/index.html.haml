@@ -8,6 +8,18 @@
 - unless flash[:alert].blank?
   %div.success
     = alert
+%div
+  %p
+    This tool has been given to you by the People team so that you no longer have to use a pen and paper
+    To post a shift that you would like to have covered please click on the 'Give a Shift' button. To view
+    a shift up for grabs or take a shift use the approprate buttons to the right of the listed shift.
+  %p
+    To give or take a shift you must use your Apple Email address and also be on a BOH connection
+  %p
+    Once you take a shift, the person who posted the shift, NMA Schedule, and youself should be emailed a notification.
+    If you do not recieve an email after you have taken a shift try again, because this means you really haven't taken
+    the shift.
+
 %p= link_to 'Give a New Shift', new_shift_path, :class => "button"
 %table
   %thead

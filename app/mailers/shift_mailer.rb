@@ -10,9 +10,7 @@ class ShiftMailer < ActionMailer::Base
       @shift = shift
       @url = "http://www.apple.com"
       headers "Reply-to" => "abraham.oshel@gmail.com"
-      attachments.inline['bg1.jpg'] = File.read(Rails.root.join('public/images/bg1.jpg'))
-      attachments.inline['bg2.jpg'] = File.read(Rails.root.join('public/images/bg2.jpg'))
-      attachments.inline['bg3.jpg'] = File.read(Rails.root.join('public/images/bg3.jpg'))
+      attachments.inline['PeopleTeamLogo.png'] = File.read(Rails.root.join('public/images/PeopleTeamLogo.png'))
       @css = File.read(File.join(Rails.root, 'public', 'stylesheets', 'notifier.css')).gsub(/\/images\/([a-zA-Z\-\_]+\.jpg)/) do |match|
           attachments.inline[$1] = File.read File.join(Rails.root, 'public', 'images', $1)
           attachments.inline[$1].url
