@@ -95,6 +95,10 @@ class ShiftsController < ApplicationController
   # DELETE /shifts/1.xml
   def destroy
     @shift = Shift.find(params[:id])
+    
+      if @shift.destroy
+        DestroyMailer.shift_destroy(@shift).deliver
+      end
     @shift.destroy
 
     respond_to do |format|
