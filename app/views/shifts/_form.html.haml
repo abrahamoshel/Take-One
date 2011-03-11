@@ -35,21 +35,7 @@
         .span-4 #{f.time_select :starttime, :class => "title"}
         .span-4.clearafter #{f.time_select :endtime, :class => "title"}
       %p.clear
-    .field.error
-      .span-5
-        = f.label :takingFirstName, :label => 'Taker\'s First Name:'
-        %br
-        = f.text_field :takingFirstName, :class => "title span-5"
-      .span-4.clearafter
-        = f.label :takingLastName, :label => 'Taker\'s Last Name:'
-        %br
-        = f.text_field :takingLastName, :class => "title span-4"
-      %p.clear    
-    .field.info
-      = f.label :takingEmail, :label => 'Taker\'s Apple Email'
-      %br
-      = f.text_field :takingEmail, :class => "title"
-
+    
   .actions.span-4.push-10.clear
     - if params[:action] == 'new'
       = f.submit "Post a Shift"
