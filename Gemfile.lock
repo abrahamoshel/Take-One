@@ -70,6 +70,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.2.4)
+      actionpack
     mime-types (1.16)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -127,6 +129,7 @@ DEPENDENCIES
   heroku
   jammit
   jquery-rails (>= 0.2.6)
+  meta-tags
   nokogiri
   passenger
   rails (= 3.0.3)

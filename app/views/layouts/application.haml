@@ -8,7 +8,7 @@
   = csrf_meta_tag 
   /= formtastic_stylesheet_link_tag 
   = include_stylesheets :common, :workspace, :media => 'all'
-  
+  = display_meta_tags :noindex => true, :noindex => 'googlebot', :nofollow => true, :nofollow => 'googlebot' 
 
 %body
   .container
