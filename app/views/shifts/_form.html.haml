@@ -1,0 +1,43 @@
+= semantic_form_for @shift do |f|
+  - if @shift.errors.any?
+    #errorExplanation.error.clear.span-10.push-7
+      %h3= "#{pluralize(@shift.errors.count, 'error')} prohibited this Shift from being saved:"
+      %ul
+        - @shift.errors.full_messages.each do |msg|
+          %li= msg
+  .span-10.push-7.clear
+    .field.success
+      .span-5
+        = f.label :firstName, :label => 'Giver\'s First Name:'
+        %br
+        = f.text_field :firstName, :class => "title span-5"
+      .span-4.clearafter
+        = f.label :lastName, :label => 'Giver\'s Last Name:'
+        %br
+        = f.text_field :lastName, :class => "title span-4"
+      %p.clear
+    .field.info
+      = f.label :email
+      %br
+      = f.text_field :email, :class => "title"
+    .field.info
+      = f.label :shiftType, :label => "Type of Shift (FRS, Moblie, Red Zone, etc.)"
+      %br
+      = f.text_field :shiftType, :class => "title"
+    .field.info
+      = f.label :date, :lable => 'Shift is on'
+      %br
+      = f.date_select :date, :class => "title"
+    .field.info
+      .span-4= f.label :starttime, :label => 'Start Time'
+      .span-4= f.label :starttime, :label => 'End Time'
+      %br
+        .span-4 #{f.time_select :starttime, :class => "title"}
+        .span-4.clearafter #{f.time_select :endtime, :class => "title"}
+      %p.clear
+    
+  .actions.span-4.push-10.clear
+    - if params[:action] == 'new'
+      = f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
+    - else
+      = f.submit "Take Shift"

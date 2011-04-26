@@ -1,0 +1,29 @@
+%hr.space
+%h3.centered.span-24 Looking at #{@shift.firstName} #{@shift.lastName} on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
+.span-10.push-7
+  - unless flash[:notice].blank?
+    %div.success
+      = notice
+  - unless flash[:alert].blank?
+    %div.success
+      = alert
+
+  %strong= 'Giver\'s Name'
+  %dd.success #{@shift.firstName} #{@shift.lastName}
+  %strong= 'Giver\'s Email'
+  %dd.info= @shift.email
+  %strong= 'Type of Shift (FRS, Moblie, Red Zone, etc.)'
+  %dd.info= @shift.shiftType
+  %strong= Shift.human_attribute_name :date
+  %dd.info= @shift.date.strftime('%a, %B %d, %Y')
+  %strong Time
+  %dd.info #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
+  %strong= 'Taker\'s Name'
+  %dd.error #{@shift.takingFirstName} #{@shift.takingLastName}
+  %strong= 'Taker\'s Email'
+  %dd.info= @shift.takingEmail
+
+%p.span-4.push-10.clear
+  = link_to 'all shifts', shifts_path, :class => "button"
+  = link_to 'take', edit_shift_path(@shift), :class => "button"
+
