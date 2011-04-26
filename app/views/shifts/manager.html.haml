@@ -11,6 +11,9 @@
 %div
   %p
     This page is only to see the record of the shifts that have been taken. You should go back to the home page if you need to give or take a shift.
+  %h2
+    The Shift Switch App has now switched #{Shift.count} shifts!!
+
 
 
 %p= link_to 'Give a New Shift', new_shift_path, :class => "button"
