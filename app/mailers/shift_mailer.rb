@@ -1,9 +1,5 @@
 class ShiftMailer < ActionMailer::Base
-  ActionMailer::Base.sendmail_settings = {
-    :location       => '/usr/sbin/sendmail',
-    :arguments      => '-i'
-  }
-    
+
   default :from => "NMA Schedule <nmaschedule@apple.com>"
 
     def shift_taken(shift)
