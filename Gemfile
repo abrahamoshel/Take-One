@@ -13,6 +13,7 @@ gem 'jammit'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
 gem 'heroku'
+gem 'meta-tags', :require => 'meta_tags'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
