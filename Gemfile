@@ -12,6 +12,7 @@ gem 'formtastic', '~> 1.1.0'
 gem 'jammit'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
+gem 'heroku'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
