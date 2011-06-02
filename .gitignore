@@ -2,5 +2,10 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+<<<<<<< HEAD
 *.swp
 .DS_Store
+=======
+public/stylesheets/.DS_Store
+.com.apple.timemachine.supported
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11

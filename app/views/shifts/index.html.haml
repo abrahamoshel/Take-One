@@ -10,6 +10,7 @@
     = alert
 %div
   %p
+<<<<<<< HEAD
     This is the Shift Switch, which has been created by the Scheduling Team to facilitate easy shift swaps among employees. The Shift Switch requires you to use your Apple email address.
   %p
     To submit a shift for another employee to take, please click on the Give a Shift button. To view available shifts and to take a shift, use the appropriate buttons to the right of the listed shift.
@@ -26,6 +27,17 @@
     %li Geniuses may only switch with other Geniuses.
     %li No switches with any team members outside of the Family Room.  This means no Specialists are able to take FR shifts. 
     %li The Shift Switch App has now switched #{Shift.count} shifts!!
+=======
+    This tool has been given to you by the People team so that you no longer have to use a pen and paper
+    To post a shift that you would like to have covered please click on the 'Give a Shift' button. To view
+    a shift up for grabs or take a shift use the approprate buttons to the right of the listed shift.
+  %p
+    To give or take a shift you must use your Apple Email address and also be on a BOH connection
+  %p
+    Once you take a shift, the person who posted the shift, NMA Schedule, and youself should be emailed a notification.
+    If you do not recieve an email after you have taken a shift try again, because this means you really haven't taken
+    the shift.
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 
 %p= link_to 'Give a New Shift', new_shift_path, :class => "button"
 %table
@@ -38,7 +50,11 @@
       %th Time
       %th Takers Name
       %th Takers Apple Email
+<<<<<<< HEAD
       %th{:colspan => 2} Actions
+=======
+      %th{:colspan => 3} Actions
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 
  
   - @shifts.each do |f|
@@ -51,5 +67,10 @@
       %td #{f.takingFirstName} #{f.takingLastName}
       %td= f.takingEmail
       %td.action= link_to 'view', f, :class => 'button'
+<<<<<<< HEAD
       - if f.takingEmail.blank?
         %td.action= link_to 'take', edit_shift_path(f), :class => 'button'
+=======
+      %td.action= link_to 'take', edit_shift_path(f), :class => 'button'
+      %td.action= link_to 'remove', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button' 
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11

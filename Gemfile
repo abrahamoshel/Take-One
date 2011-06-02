@@ -12,9 +12,12 @@ gem 'formtastic', '~> 1.1.0'
 gem 'jammit'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
+<<<<<<< HEAD
 gem 'heroku'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'simple_time_select'
+=======
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'

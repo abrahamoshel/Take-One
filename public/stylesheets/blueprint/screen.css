@@ -52,7 +52,11 @@ del {color:#666;}
 pre {margin:1.5em 0;white-space:pre;}
 pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
 li ul, li ol {margin:0;}
+<<<<<<< HEAD
 ul, ol {margin:0 1.5em 1.5em 0;}
+=======
+ul, ol {margin:0 1.5em 1.5em 0;padding-left:1.5em;}
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 ul {list-style-type:disc;}
 ol {list-style-type:decimal;}
 dl {margin:0 0 1.5em 0;}
@@ -269,4 +273,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
   text-indent: -9999px;
   height: 74px;
 }
+<<<<<<< HEAD
 ul{list-style-position:inside;}
+=======
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
