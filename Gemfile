@@ -14,6 +14,7 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
 gem 'heroku'
 gem 'meta-tags', :require => 'meta_tags'
+gem 'simple_time_select'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
