@@ -4,9 +4,13 @@
 
 set :application, "TakeOne"
 set :deploy_to, "/Library/WebServer/Documents/rails/schedule.nma.private/"
+<<<<<<< HEAD
 set :web_server_type,   :apache 
 set :app_server_type,   :passenger
 set :ruby_vm_type,      :ree   # replaces set :passenger_use_ree 
+=======
+
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 ############################################
 #     Settings     
 ############################################
@@ -15,7 +19,10 @@ default_run_options[:pty] = true
 set :use_sudo, false
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 ############################################
 #     Servers
 ############################################
@@ -63,9 +70,15 @@ after :deploy, "passenger:restart"
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+<<<<<<< HEAD
 deploy.task :restart, :roles => :app do
   run "touch #{current_path}/tmp/restart.txt"
 end
+=======
+#deploy.task :restart, :roles => :app do
+#  run "touch #{current_path}/tmp/restart.txt"
+#end
+>>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 
 
 # namespace :deploy do
