@@ -38,10 +38,6 @@
     
   .actions.span-4.push-10.clear
     - if params[:action] == 'new'
-<<<<<<< HEAD
-      = f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
-=======
-      = f.submit "Post a Shift"
->>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
+= f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
     - else
       = f.submit "Take Shift"
