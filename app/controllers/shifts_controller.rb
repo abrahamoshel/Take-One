@@ -10,7 +10,6 @@ class ShiftsController < ApplicationController
     end
   end 
   def index
-<<<<<<< HEAD
     @shifts = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65}, :order => "date DESC")
 
     respond_to do |format|
@@ -23,9 +22,6 @@ class ShiftsController < ApplicationController
   # Just a list of all shifts for mangers to see.
   def manager
     @shifts = Shift.all(:order => "date DESC")
-=======
-    @shifts = Shift.all(:order => "date ASC")
->>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 
     respond_to do |format|
       format.html # index.html.erb
@@ -110,10 +106,6 @@ class ShiftsController < ApplicationController
   # DELETE /shifts/1.xml
   def destroy
     @shift = Shift.find(params[:id])
-<<<<<<< HEAD
-=======
-    
->>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
       if @shift.destroy
         DestroyMailer.shift_destroy(@shift).deliver
       end
@@ -124,8 +116,4 @@ class ShiftsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-<<<<<<< HEAD
-
-=======
->>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
 end
