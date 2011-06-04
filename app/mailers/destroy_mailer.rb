@@ -14,5 +14,4 @@ class DestroyMailer < ActionMailer::Base
       mail(:to => [shift.email, shift.takingEmail, "nmaschedule@apple.com"],
           :subject => "A Shift Deleted!")
     end
- 
 end

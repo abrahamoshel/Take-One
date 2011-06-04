@@ -67,7 +67,6 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.save
-        
         format.html { redirect_to(shifts_path, :notice => 'Shift was successfully created.') }
         format.xml  { render :xml => @shift, :status => :created, :location => @shift }
 
