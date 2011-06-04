@@ -11,7 +11,7 @@ class DestroyMailer < ActionMailer::Base
           attachments.inline[$1] = File.read File.join(Rails.root, 'public', 'images', $1)
           attachments.inline[$1].url
       end
-      mail(:to => [shift.email, shift.takingEmail, "nmaschedule@apple.com"],
+      mail(:to => [shift.email, "nmaschedule@apple.com"],
           :subject => "A Shift Deleted!")
     end
 end
