@@ -273,7 +273,5 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
   text-indent: -9999px;
   height: 74px;
 }
-<<<<<<< HEAD
 ul{list-style-position:inside;}
-=======
->>>>>>> 6882626e30f05d3b7b8a19225bffcac49b842e11
+.span-custom{width:170px; float:left; position:relative;}

@@ -29,15 +29,14 @@
       %br
       = f.date_select :date, :class => "title"
     .field.info
-      .span-4= f.label :starttime, :label => 'Start Time'
-      .span-4= f.label :starttime, :label => 'End Time'
+      .span-custom= f.label :starttime, :label => 'Start Time'
+      .span-custom= f.label :starttime, :label => 'End Time'
       %br
-        .span-4 #{f.time_select :starttime, :class => "title"}
-        .span-4.clearafter #{f.time_select :endtime, :class => "title"}
+        .span-custom #{f.time_select :starttime, :class => "title", :twelve_hour => true}
+        .span-custom.clearafter #{f.time_select :endtime, :class => "title", :twelve_hour => true}
       %p.clear
-    
   .actions.span-4.push-10.clear
     - if params[:action] == 'new'
-= f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
+      = f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
     - else
       = f.submit "Take Shift"
