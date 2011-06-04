@@ -25,5 +25,6 @@
 
 %p.span-4.push-10.clear
   = link_to 'all shifts', shifts_path, :class => "button"
-  = link_to 'take', edit_shift_path(@shift), :class => "button"
+  - if @shift.takingEmail.nil?
+    = link_to 'take', edit_shift_path(@shift), :class => "button"
 
