@@ -20,7 +20,7 @@ set :use_sudo, false
 #     Servers
 ############################################
 
-set :user, "aaoshel"
+set :user, ""
 set :runner, user
 set :group, "admin"
 
@@ -35,10 +35,10 @@ role :db,  "schedule.nma.private", :primary => true # This is where Rails migrat
 #     Git
 ############################################
 
-set :repository,  "git@github.com:abrahamoshel/Take-One.git"
+set :repository,  ""
 set :scm, :git
-set :scm_username, "abrahamoshel"
-set :scm_password, "zxcvzxcv1"
+set :scm_username, ""
+set :scm_password, ""
 set :scm_command, "/usr/local/bin/git"
 set :local_scm_command, "git"
 
