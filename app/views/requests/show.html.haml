@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @request.firstName
+%p
+  %b Lastname:
+  = @request.lastName
+%p
+  %b Email:
+  = @request.email
+%p
+  %b Date Range
+  %br
+  #{@request.startDate.strftime('%B %d, %Y')} - #{@request.endDate.strftime('%B %d, %Y')}
+%table
+  %tr.span-12
+    %th.span-4
+      Dates
+    %th.span-4
+      Vacation Time
+    %th.span-4
+      Sick Time
+  - for hour in @request.hours
+    %tr.span-12
+      %td.span-4
+        = hour.dates
+      %td.span-4
+        = hour.vacation
+      %td.span-4
+        = hour.sick
+  %tr.span-12
+    %td.span-4
+      Totals
+    %td.span-4
+      = @request.hours.map{|a| a.vacation.to_i}.sum
+    %td.span-4
+      = @request.hours.map{|a| a.sick.to_i}.sum
+%p
+  %b Comment:
+  = @request.comment
+
+= link_to 'Edit', edit_request_path(@request)
+
+= link_to 'Back', requests_path

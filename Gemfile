@@ -6,12 +6,13 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'nokogiri'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'haml'
+gem 'haml-rails'
 gem 'formtastic', '~> 1.1.0'
 gem 'jammit'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
 gem 'heroku'
+gem "nested_form"
 gem 'meta-tags', :require => 'meta_tags'
 
 group :development do
