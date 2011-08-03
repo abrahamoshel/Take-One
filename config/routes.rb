@@ -1,6 +1,8 @@
 Takeone::Application.routes.draw do
+  resources :requests
+
   resources :shifts
-  root :to => "shifts#index"
+  root :to => "splash#index"
 
   match "/manager" => "shifts#manager"
 

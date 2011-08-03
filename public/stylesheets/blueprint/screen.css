@@ -267,6 +267,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
 .clearleft{clear:left;}
+.clearright{clear:right;}
 .centered {text-align: center;}
 .container h1{
   background: transparent url('../../images/scheduleTeam.png') no-repeat;

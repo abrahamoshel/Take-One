@@ -1,0 +1,39 @@
+%h1.clear Listing requests
+
+.append-bottom.clearfix
+  = link_to 'Request Off', new_request_path, :class => "clear clearfix button"
+
+- @requests.each do |request|
+  %table.span-6
+    %tr
+      %th.centered
+        #{request.firstName} #{request.lastName}
+    %tr
+      %td.centered
+        = request.email
+    %tr
+      %td.centered
+        %strong #{request.startDate.strftime('%B %d, %Y')} - #{request.endDate.strftime('%B %d, %Y')}
+    %tr
+      %td.centered
+        Vacation Time:
+        %strong #{request.hours.sum(:vacation)}
+        hrs. total
+    %tr
+      %td.centered
+        Sick Time:
+        %strong #{request.hours.sum(:sick)}
+        hrs. total
+    %tr
+      %td.centered
+        = link_to 'Show', request
+    %tr
+      %td.centered
+        = link_to 'Edit', edit_request_path(request)
+    %tr
+      %td.centered
+        = link_to 'Destroy', request, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+
