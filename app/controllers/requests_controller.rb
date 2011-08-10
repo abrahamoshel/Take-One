@@ -61,7 +61,10 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
 
     respond_to do |format|
-      if @request.update_attributes(params[:request])
+      if @request.update_attributes(params[:request]) && @request.email != "" && @request.firstName != ""
+        #Tell the RequestMailer to send a Email if someone enters name and email for Requsting off
+        RequestMailer.request_off(@request).deliver
+
         format.html { redirect_to(@request, :notice => 'Request was successfully updated.') }
         format.xml  { head :ok }
       else
