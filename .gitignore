@@ -6,3 +6,4 @@ tmp/**/*
 .DS_Store
 public/stylesheets/.DS_Store
 .com.apple.timemachine.supported
+config/initializers/setup_mail.rb
