@@ -2,7 +2,7 @@ class RequestMailer < ActionMailer::Base
 
   default :from => "NMA Schedule <nmaschedule@apple.com>"
 
-    def shift_destroy(request)
+    def request_off(request)
       @request = request
       @url = "http://www.apple.com"
       headers "Reply-to" => "nmaschedule@apple.com"
