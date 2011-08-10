@@ -10,4 +10,3 @@ public/stylesheets/.DS_Store
 config/initializers/setup_mail.rb
 config/environments/*
 app/controllers/application_controller.rb
-
