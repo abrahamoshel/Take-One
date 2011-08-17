@@ -1,0 +1,53 @@
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => "text/html; charset=utf-8"}
+    %style{'type' => 'text/css'}
+      = @css
+
+  %body
+    %table{'style' => 'border-collapse:separate; border-spacing: 0px; display:inline; border:0px; cellpadding:0px; border: 1px solid #CCC; border-radius: 20px; padding: 10px;'}
+      %tr{:border => 0, :cellpadding => 0}
+        %td{:colspan => 3, :border => 0, :cellpadding => 0}
+          = image_tag attachments['scheduleTeam.png'].url, :style => "display:block; border:0"
+
+      %tr
+        %td{:width => '43px'}
+        %td{:width => '480px'}
+          %h2 A New Request Off
+          %p
+            %strong #{@request.firstName} #{@request.lastName} 
+            just requested #{@request.startDate.strftime('%a, %B %d, %Y')} - #{@request.endDate.strftime('%a, %B %d, %Y')} off
+          %table
+            %tr.span-12
+              %th.span-4
+                Dates
+              %th.span-4
+                Vacation Time
+              %th.span-4
+                Sick Time
+            - for hour in @request.hours
+              %tr.span-12
+                %td.span-4
+                  = hour.dates
+                %td.span-4
+                  = hour.vacation
+                %td.span-4
+                  = hour.sick
+            %tr.span-12
+              %td.span-4
+                Totals
+              %td.span-4
+                = @request.hours.map{|a| a.vacation.to_i}.sum
+              %td.span-4
+                = @request.hours.map{|a| a.sick.to_i}.sum
+
+
+          %p
+            An Email has already been sent to:
+            %ul
+              %li NMA Schedule - nmaschedule@apple.com
+              %li #{@request.firstName} #{@request.lastName} - #{@request.email}
+
+        %td{:width => '40px'}
+      %tr
+        %td{:colspan => 3}
