@@ -1,0 +1,37 @@
+= form_for @holiday do |f|
+  -if @holiday.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@holiday.errors.count, "error")} prohibited this holiday from being saved:"
+      %ul
+        - @holiday.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :firstName
+    = f.text_field :firstName
+  .field
+    = f.label :lastName
+    = f.text_field :lastName
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :firstStart
+    = f.date_select :firstStart
+  .field
+    = f.label :firstEnd
+    = f.date_select :firstEnd
+  .field
+    = f.label :secondStart
+    = f.date_select :secondStart
+  .field
+    = f.label :secondEnd
+    = f.date_select :secondEnd
+  .field
+    = f.label :thirdStart
+    = f.date_select :thirdStart
+  .field
+    = f.label :thirdEnd
+    = f.date_select :thirdEnd
+  .actions
+    = f.submit 'Save'
