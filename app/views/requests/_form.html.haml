@@ -41,10 +41,10 @@
           = t.label :sick
           = t.text_field :sick, :size => 5
       .span-4.append-8
-        = t.link_to_remove "Remove this Date", :class => "button"
+        = t.link_to_remove "Remove Time", :class => "button"
   .clearright.clearfix
     %br
-    = f.link_to_add "Add a date", :hours, :class => "button"
+    = f.link_to_add "Add Sick/Vac Time", :hours, :class => "button"
   .field
     = f.label :comment
     %br

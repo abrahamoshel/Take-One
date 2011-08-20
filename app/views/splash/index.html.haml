@@ -2,4 +2,4 @@
 /=image_tag('apple/rails.png')
 
 = link_to "Post a Shift", shifts_path, :class => "button"
-= link_to "Request Off", requests_path, :class => "button"
+= link_to "Request Off", {:controller => "requests", :action => "new"}, :class => "button"
