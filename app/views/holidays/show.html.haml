@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @holiday.firstName
+%p
+  %b Lastname:
+  = @holiday.lastName
+%p
+  %b Email:
+  = @holiday.email
+%p
+  %b Firststart:
+  = @holiday.firstStart
+%p
+  %b Firstend:
+  = @holiday.firstEnd
+%p
+  %b Secondstart:
+  = @holiday.secondStart
+%p
+  %b Secondend:
+  = @holiday.secondEnd
+%p
+  %b Thirdstart:
+  = @holiday.thirdStart
+%p
+  %b Thirdend:
+  = @holiday.thirdEnd
+
+= link_to 'Edit', edit_holiday_path(@holiday)
+\|
+= link_to 'Back', holidays_path
