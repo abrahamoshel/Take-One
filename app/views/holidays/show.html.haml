@@ -27,7 +27,10 @@
 %p
   %b Thirdend:
   = @holiday.thirdEnd
+%p
+  %b Managers email:
+  = @holiday.manager.email
 
 = link_to 'Edit', edit_holiday_path(@holiday)
 \|
-= link_to 'Back', holidays_path
+= link_to 'Back', new_holiday_path

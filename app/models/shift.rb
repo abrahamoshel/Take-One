@@ -1,5 +1,5 @@
 class Shift < ActiveRecord::Base
-  validates :firstName, :lastName, :email, :presence => true 
+  validates :firstName, :lastName, :email, :presence => true
   validates_format_of :email, :with => /apple\.com/, :message => "You must use your Apple Email"
   validates_format_of :takingEmail, :with => /apple\.com/, :allow_blank => true,  :message => "You must use your Apple Email"
 
