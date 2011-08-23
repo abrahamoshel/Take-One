@@ -1,4 +1,4 @@
-%h1 Listing holidays
+%h1.clear Listing holidays
 
 %table
   %tr
@@ -20,12 +20,8 @@
       %td= holiday.firstName
       %td= holiday.lastName
       %td= holiday.email
-      %td= holiday.firstStart
-      %td= holiday.firstEnd
-      %td= holiday.secondStart
-      %td= holiday.secondEnd
-      %td= holiday.thirdStart
-      %td= holiday.thirdEnd
+      %td= holiday.manager.name
+      %td= holiday.manager.email
       %td= link_to 'Show', holiday
       %td= link_to 'Edit', edit_holiday_path(holiday)
       %td= link_to 'Destroy', holiday, :confirm => 'Are you sure?', :method => :delete
