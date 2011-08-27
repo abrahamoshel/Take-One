@@ -1,0 +1,12 @@
+<div id="user_nav">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <p id="leftfield" class='span-11 prepend-1 column'><%= f.email_field :email, :placeholder => "UserName"%></p>
+
+    <p id='rightfield' class='span-11 column'><%= f.password_field :password, :placeholder => "Password" %></p>
+
+
+    <p class="submit append-2"><%= f.submit "Sign in", :confirm => "Notice: Unauthoized access of this site is prohibited. By proceeding form this point, you agree to comply with all Terms & Conditions applying to the use of this site. You will be held responsible for the appropriate use of the ID and password used to access this site, as well as all information accessed on this site. ----------------------------------------- Accessing this site during non-work hours should be for the limited purpose of viewing and checking your work schedule. Any other use of this site must be completed during manger approved and scheduled work time."%></p>
+
+  <% end %>
+</div>
+

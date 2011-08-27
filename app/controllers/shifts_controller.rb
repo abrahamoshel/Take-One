@@ -1,4 +1,5 @@
 class ShiftsController < ApplicationController
+  before_filter :authenticate_employee!
   # GET /shifts
   # GET /shifts.xml
   def shift_taken
