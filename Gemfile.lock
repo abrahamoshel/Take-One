@@ -33,6 +33,7 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.10)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capistrano (2.6.0)
       highline
@@ -44,6 +45,10 @@ GEM
       capistrano (>= 1.0.0)
     configuration (1.2.0)
     daemon_controller (0.2.6)
+    devise (1.4.2)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fastthread (1.0.7)
@@ -89,6 +94,7 @@ GEM
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
     open4 (1.0.1)
+    orm_adapter (0.0.5)
     passenger (3.0.7)
       daemon_controller (>= 0.2.5)
       fastthread (>= 1.0.1)
@@ -124,6 +130,8 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.27)
+    warden (1.0.5)
+      rack (>= 1.0)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -132,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano-ext (~> 1.2.1)
+  devise
   formtastic (~> 1.1.0)
   haml-rails
   heroku
