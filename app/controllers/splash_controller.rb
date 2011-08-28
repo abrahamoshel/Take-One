@@ -4,6 +4,6 @@ class SplashController < ApplicationController
   #before_filter :authenticate_employee!
 
   def index
-    @title = "Splash"
+    @title = "Retail"
   end
 end

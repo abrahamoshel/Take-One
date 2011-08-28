@@ -1,1 +1,14 @@
-<p>Splash</p>
+%h1.clear Give One Take One:
+/=image_tag('apple/rails.png')
+%div
+  - if employee_signed_in?
+    Signed in as
+    = current_employee.email
+    = link_to "Sign out", destroy_employee_session_path
+  - else
+    = link_to "Sign up", new_employee_registration_path
+    = link_to "Sign in", new_employee_session_path
+
+= link_to "Post a Shift", shifts_path, :class => "button"
+= link_to "Request Off", new_request_path, :class => "button"
+= link_to "Holiday Request", new_holiday_path, :class => "button"

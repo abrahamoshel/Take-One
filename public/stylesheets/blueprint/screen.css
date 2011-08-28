@@ -54,7 +54,7 @@ pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1
 li ul, li ol {margin:0;}
 ul, ol {margin:0 1.5em 1.5em 0;padding-left:1.5em;}
 ul {list-style-type:disc;}
-ol {list-style-type:decimal;}
+ol {list-style-type:disc;}
 dl {margin:0 0 1.5em 0;}
 dl dt {font-weight:bold;}
 table {margin-bottom:1.4em;width:100%;}
@@ -103,7 +103,7 @@ form.inline p {margin-bottom:0;}
 .info a {color:#205791;}
 
 /* grid.css */
-.container {width:950px;margin:0 auto;background:url('../../images/bg.png');}
+.container {width:950px;margin:0 auto;}
 .showgrid {background:url(src/grid.png);}
 .column, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {float:left;margin-right:10px;}
 .last {margin-right:0;}

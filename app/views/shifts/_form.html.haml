@@ -5,38 +5,26 @@
       %ul
         - @shift.errors.full_messages.each do |msg|
           %li= msg
-  .span-10.push-7.clear
-    .field.success
-      .span-5
-        = f.label :firstName, :label => 'Giver\'s First Name:'
-        %br
-        = f.text_field :firstName, :class => "title span-5"
-      .span-4.clearafter
-        = f.label :lastName, :label => 'Giver\'s Last Name:'
-        %br
-        = f.text_field :lastName, :class => "title span-4"
-      %p.clear
-    .field.info
-      = f.label :email
-      %br
-      = f.text_field :email, :class => "title"
-    .field.info
-      = f.label :shiftType, :label => "Type of Shift (FRS, Moblie, Red Zone, etc.)"
-      %br
-      = f.text_field :shiftType, :class => "title"
-    .field.info
-      = f.label :date, :label => 'Shift is on'
-      %br
+  %h3.clear Contact Information:
+  %ul.span-22
+    %li
+      = f.text_field :firstName, :class => "title", :placeholder =>'Giver\'s First Name:'
+    %li
+      = f.text_field :lastName, :class => "title", :placeholder =>'Giver\'s Last Name:'
+    %li
+      = f.text_field :email, :class => "title", :placeholder =>'Giver\'s Email'
+  %h3.clear Shift Information:
+  %ul.span-22
+    %li
+      = f.text_field :shiftType, :class => "title", :placeholder =>'Type of Shift (FRS, Moblie, Red Zone, etc.)'
+    %li
       = f.text_field :date, :class => "title"
-    .field.info
-      .span-custom= f.label :starttime, :label => 'Start Time'
-      .span-custom= f.label :starttime, :label => 'End Time'
-      %br
-        .span-custom #{f.time_select :starttime, :class => "title", :twelve_hour => true,  :minute_step => 15}
-        .span-custom.clearafter #{f.time_select :endtime, :class => "title", :twelve_hour => true, :minute_step => 15}
-      %p.clear
-  .actions.span-4.push-10.clear
+    %li.time
+      #{f.time_select :starttime, :class => "title", :twelve_hour => true,  :minute_step => 15}
+    %li.time
+      #{f.time_select :endtime, :class => "title", :twelve_hour => true, :minute_step => 15}
+  .clear.span-22
     - if params[:action] == 'new'
-      = f.submit "Post a Shift", :confirm => "Double check is the shift information correct?"
+      = f.submit "Post a Shift", :confirm => "Double check is the shift information correct?", :class => 'button white span-23'
     - else
-      = f.submit "Take Shift"
+      = f.submit "Take Shift", :confirm => "Are you sure you want to take this shift?", :class => 'button white span-23'

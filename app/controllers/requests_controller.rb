@@ -14,6 +14,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   # GET /requests/1.xml
   def show
+     @title = "Your Rquest Off"
     @request = Request.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +26,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   # GET /requests/new.xml
   def new
+    @title = "New Rquest Off"
     @request = Request.new
     0.times { @request.hours.build }
 

@@ -20,8 +20,8 @@
       %td= holiday.firstName
       %td= holiday.lastName
       %td= holiday.email
-      %td= holiday.manager.name
-      %td= holiday.manager.email
+      %td= holiday.manager
+      %td= #holiday.manager.email
       %td= link_to 'Show', holiday
       %td= link_to 'Edit', edit_holiday_path(holiday)
       %td= link_to 'Destroy', holiday, :confirm => 'Are you sure?', :method => :delete

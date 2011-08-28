@@ -11,6 +11,7 @@ class ShiftsController < ApplicationController
     end
   end 
   def index
+    @title = "Shift Switch"
     @shifts = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65}, :order => "date DESC")
 
     respond_to do |format|
@@ -34,6 +35,7 @@ class ShiftsController < ApplicationController
   # GET /shifts/1
   # GET /shifts/1.xml
   def show
+    @title = "Shift Switch"
     @shift = Shift.find(params[:id])
     @shift.endtime 
     respond_to do |format|
@@ -45,8 +47,9 @@ class ShiftsController < ApplicationController
   # GET /shifts/new
   # GET /shifts/new.xml
   def new
+    @title = "Posting New Shift"
     @shift = Shift.new
-    @shift.date ||= Date.today
+    @shift.date ||= Date.today.strftime('%a %b %d, %Y')
     @shift.starttime ||= Time.now
     @shift.endtime ||= Time.now+5.hour
 
@@ -58,6 +61,7 @@ class ShiftsController < ApplicationController
 
   # GET /shifts/1/edit
   def edit
+    @title = "Shift Switch"
     @shift = Shift.find(params[:id])
   end
 

@@ -24,7 +24,7 @@
           %h1.span-6.last
             NMA Schedule Team
             /=image_tag('apple/rails.png')png
-          %h2.span-18.last
+          %h2.last
             =@title
         %div#sidebar.span-6.last
           = link_to image_tag('home.png') + "Home",{:controller => 'splash', :aciton =>'index'}
@@ -38,6 +38,10 @@
       - else
         = link_to "Sign up", new_employee_registration_path
         = link_to "Sign in", new_employee_session_path
-      = yield
+      - if employee_signed_in?
+        %div#main.span-19
+          = yield
+      -else
+        = yield
 
 

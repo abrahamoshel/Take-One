@@ -5,35 +5,37 @@
       %ul
         - @holiday.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :firstName
-    = f.text_field :firstName
-  .field
-    = f.label :lastName
-    = f.text_field :lastName
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :firstStart
-    = f.text_field :firstStart
-  .field
-    = f.label :firstEnd
-    = f.text_field :firstEnd
-  .field
-    = f.label :secondStart
-    = f.text_field :secondStart
-  .field
-    = f.label :secondEnd
-    = f.text_field :secondEnd
-  .field
-    = f.label :thirdStart
-    = f.text_field :thirdStart
-  .field
-    = f.label :thirdEnd
-    = f.text_field :thirdEnd
-  .field
-    = f.input :manager, :as => :select, :collection => Manager.all
-  .actions
-    = f.submit 'Save'
+  %ul.span-22
+    %li
+      = f.text_field :firstName, :placeholder => "First Name"
+    %li
+      = f.text_field :lastName, :placeholder => "Last Name"
+    %li
+      = f.text_field :email, :placeholder => "Email"
+  %h3.clear First Choice
+  %ul.span-22
+    %li
+      = f.text_field :firstStart, :placeholder => "Start Date"
+    %li
+      = f.text_field :firstEnd, :placeholder => "End Date"
+  %h3.clear Second Choice
+  %ul.span-22
+    %li
+      = f.text_field :secondStart, :placeholder => "Start Date"
+    %li
+      = f.text_field :secondEnd, :placeholder => "End Date"
+  %h3.clear Third Choice
+  %ul.span-22
+    %li
+      = f.text_field :thirdStart, :placeholder => "Start Date"
+    %li
+      = f.text_field :thirdEnd, :placeholder => "End Date"
+  %h3.clear Comments
+  %ul.span-22
+    %li
+      = f.text_area :comment, :placeholder => "Comments"
+  %h3.clear Mentor Manager
+  %ul.span-22
+    = f.input :manager, :as => :select, :collection => Manager.all,:prompt=>"Choose Manager", :label => false
+  .span-22.clear
+    = f.submit 'Save', :confirm => "Are you sure you want to take this shift?", :class => 'button white span-23'
