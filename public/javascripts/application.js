@@ -51,9 +51,10 @@ switch (toDay) {
     beforeShowDay: nationalDays
   });
   $("#shift_date").datepicker({
-    dateFormat: 'D M d, yy',
     minDate: myDate,
+    dateFormat: 'D M d, yy',
     beforeShowDay: nationalDays
   });
+  $('#main').tinyscrollbar();
 });
 

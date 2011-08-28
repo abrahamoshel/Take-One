@@ -15,7 +15,7 @@ Takeone::Application.routes.draw do
   match '/retail' => "splash#index", :as => :employee_root
 
   match "/manager" => "shifts#manager"
-  match "admin" => "holidays#index"
+  match "/admin" => "holidays#index"
 
   match "/shifts/shift_taken/:id" => "shifts#shift_taken"
 

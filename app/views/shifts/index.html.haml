@@ -14,7 +14,7 @@
     To submit a shift for another employee to take, please click on the Give a Shift button. To view available shifts and to take a shift, use the appropriate buttons to the right of the listed shift.
   %p
     Once a shift is taken, the person who posted the shift, the person taking the shift and NMA Schedule are emailed a notification. If you do not receive an email notification, please resubmit taking the shift, as the request did not fully process.
-  %ul
+  %ol
     %h6 As a reminder, there are a few guidelines for switching shifts:
     %li Please double check you are not already working on the day you take a shift.
     %li Employees cannot work more than 8 total hours on a given day, even with split shifts. Also employees cannot work over 40 hours a week (Saturday-Friday).
@@ -27,7 +27,7 @@
     %li The Shift Switch App has now switched #{Shift.count} shifts!!
 
 
-%p= link_to 'Give a New Shift', new_shift_path, :class => "button"
+%p= link_to 'Give a New Shift', new_shift_path, :class => "button white"
 %table
   %thead
     %tr
@@ -50,6 +50,6 @@
       %td #{f.starttime.strftime('%I:%M %p')} - #{f.endtime.strftime('%I:%M %p')}
       %td #{f.takingFirstName} #{f.takingLastName}
       %td= f.takingEmail
-      %td.action= link_to 'view', f, :class => 'button'
+      %td.action= link_to 'view', f, :class => 'button white'
       - if f.takingEmail.blank?
-        %td.action= link_to 'take', edit_shift_path(f), :class => 'button'
+        %td.action= link_to 'take', edit_shift_path(f), :class => 'button white'

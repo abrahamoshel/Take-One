@@ -13,6 +13,7 @@ class HolidaysController < ApplicationController
   # GET /holidays/1
   # GET /holidays/1.xml
   def show
+    @title = "Your Holiday Request"
     @holiday = Holiday.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class HolidaysController < ApplicationController
   # GET /holidays/new
   # GET /holidays/new.xml
   def new
+    @title = "New Holiday Request"
     @holiday = Holiday.new
 
     respond_to do |format|

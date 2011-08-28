@@ -1,5 +1,3 @@
-%hr.space
-%h3.centered.span-24 Looking at #{@shift.firstName} #{@shift.lastName} on #{@shift.date.strftime('%a, %B %d, %Y')} at #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
 .span-10.push-7
   - unless flash[:notice].blank?
     %div.success
@@ -8,23 +6,32 @@
     %div.success
       = alert
 
-  %strong= 'Giver\'s Name'
-  %dd.success #{@shift.firstName} #{@shift.lastName}
-  %strong= 'Giver\'s Email'
-  %dd.info= @shift.email
-  %strong= 'Type of Shift (FRS, Moblie, Red Zone, etc.)'
-  %dd.info= @shift.shiftType
-  %strong= Shift.human_attribute_name :date
-  %dd.info= @shift.date.strftime('%a, %B %d, %Y')
-  %strong Time
-  %dd.info #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
-  %strong= 'Taker\'s Name'
-  %dd.error #{@shift.takingFirstName} #{@shift.takingLastName}
-  %strong= 'Taker\'s Email'
-  %dd.info= @shift.takingEmail
+%h3.clear
+  #{@shift.firstName} #{@shift.lastName}'s Shift
+%ul.span-22
+  %li
+    Email:
+    = @shift.email
+  %li
+    Shift Type:
+    = @shift.shiftType
+  %li
+    Shift Date:
+    = @shift.date.strftime('%a, %B %d, %Y')
+  %li
+    Shift Hours:
+    #{@shift.starttime.strftime('%I:%M %p')} - #{@shift.endtime.strftime('%I:%M %p')}
+  -if !@shift.takingEmail.nil?
+    %li
+      Taker's Name:
+      #{@shift.takingFirstName} #{@shift.takingLastName}
+    %li
+      Taker's Email:
+      = @shift.takingEmail
 
-%p.span-4.push-10.clear
-  = link_to 'all shifts', shifts_path, :class => "button"
+
+%p.span-22.clear
+  = link_to 'all shifts', shifts_path, :id => "back"
   - if @shift.takingEmail.nil?
-    = link_to 'take', edit_shift_path(@shift), :class => "button"
+    = link_to 'Take Shift', edit_shift_path(@shift), :class => 'button white span-23'
 
