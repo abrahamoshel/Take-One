@@ -1,4 +1,4 @@
-body { background:url('../../images/bg.png') fixed; color: #333; }
+body { background:url('/images/bg.png') fixed; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -336,7 +336,7 @@ input:focus, textarea:focus {
 #sidebar a{
   float:none;
   display:block;
-  background: url(../../images/sidebar.png) no-repeat transparent;
+  background: url('/images/sidebar.png') no-repeat transparent;
   height:46px;
   line-height: 3.5em;
   color: #4D4D4D;
@@ -359,7 +359,7 @@ p[id$='field']{
   float:right;
 }
 .container #header h1{
-  background: transparent url('../../images/scheduleTeam.png') no-repeat;
+  background: transparent url('/images/scheduleTeam.png') no-repeat;
   text-indent: -9999px;
   margin: 0 0 15px 0;
   -webkit-margin-before: 0px;
@@ -381,7 +381,7 @@ h2{
 }
 #header{
   border: 1px #999 solid;
-  background:url(../../images/headerbg.png) repeat;
+  background:url('/images/headerbg.png') repeat;
   position: fixed;
   z-index: 5;
 }
@@ -389,7 +389,7 @@ form .holiday{
   overflow:scroll
 }
 #main{
-  background: url(../../images/mainbg.png) repeat fixed 300px 40px;
+  background: url('images/mainbg.png') repeat fixed 300px 40px;
   position: absolute;
   top: 40px;
   left:300px;
@@ -436,7 +436,7 @@ margin: 15px 10px 17px 0;
 }
 #main ul li input[type="text"], #main ul li input[type="password"],  #main ul li input[type="email"], #main ul li textarea, #main ul li select {
 color: #777;
-background: white url(../.png);
+background: white url('/.png');
 border: 0;
 font: normal 17px Helvetica;
 padding: 0;
@@ -471,7 +471,7 @@ margin: 3px 0;
 #main .white {
 color: black;
 text-shadow: white 0px 1px 0;
--webkit-border-image: url(../../images/whiteButton.png) 0 14 0 14;
+-webkit-border-image: url('/images/whiteButton.png') 0 14 0 14;
 margin-bottom: 50px;
 width: 100%;
 }
@@ -483,7 +483,7 @@ font: bold 12px/30px Helvetica;
 padding: 0;
 max-width: 55px;
 border-width: 0 8px 0 14px;
--webkit-border-image: url(../images/backButton.png) 0 8 0 14;
+-webkit-border-image: url('/images/backButton.png') 0 8 0 14;
 width: auto;
 height: 30px;
 position: fixed;
