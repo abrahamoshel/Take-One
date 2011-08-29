@@ -13,7 +13,7 @@ class ShiftsController < ApplicationController
   def index
     @title = "Shift Switch"
     @shifts = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65, :takingEmail => nil}, :order => "date DESC")
-    @shiftscovered = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65},:conditions =>  "takingEmail IS NOT NULL", :order => "date DESC")
+    @shiftscovered = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65}, :order => "date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
