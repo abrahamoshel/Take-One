@@ -12,7 +12,8 @@ class ShiftsController < ApplicationController
   end 
   def index
     @title = "Shift Switch"
-    @shifts = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65}, :order => "date DESC")
+    @shifts = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65, :takingEmail => nil}, :order => "date DESC")
+    @shiftscovered = Shift.find(:all, :conditions => {:date => Date.today - 2...Date.today + 65},:conditions =>  "takingEmail IS NOT NULL", :order => "date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,7 +24,9 @@ class ShiftsController < ApplicationController
 
   # Just a list of all shifts for mangers to see.
   def manager
-    @shifts = Shift.all(:order => "date DESC")
+    @title = "Manager View of Shifts"
+    @shifts = Shift.all(:conditions => "takingEmail IS NULL", :order => "date DESC")
+    @shiftscovered = Shift.find(:all, :conditions =>  "takingEmail IS NOT NULL", :order => "date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
