@@ -359,7 +359,7 @@ p[id$='field']{
   float:right;
 }
 .container #header h1{
-  background: transparent url('images/scheduleTeam.png') no-repeat;
+  background: transparent url('/images/scheduleTeam.png') no-repeat;
   text-indent: -9999px;
   margin: 0 0 15px 0;
   -webkit-margin-before: 0px;
