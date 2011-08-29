@@ -25,7 +25,7 @@ class ShiftsController < ApplicationController
   # Just a list of all shifts for mangers to see.
   def manager
     @title = "Manager View of Shifts"
-    @shifts = Shift.all(:conditions => ("takingEmail IS NULL"), :order => "date DESC")
+    @shifts = Shift.all(:conditions => {:takingEmail => nil}, :order => "date DESC")
     @shiftscovered = Shift.find(:all , :order => "date DESC", :limit => 30)
 
     respond_to do |format|
