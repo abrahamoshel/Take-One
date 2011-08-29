@@ -473,6 +473,7 @@ color: black;
 text-shadow: white 0px 1px 0;
 -webkit-border-image: url(../../images/whiteButton.png) 0 14 0 14;
 margin-bottom: 50px;
+width: 100%;
 }
 
 #main #back{
@@ -489,8 +490,31 @@ position: fixed;
 z-index: 6;
 top: 5px;
 color: #FFF;
-
+}
+.span-22 .even{
+  width:177px;
+}
+#main .action .white{
+  font: bold 14px/20px Helvetica;
+  margin-bottom: 0px;
+  width: auto;
+}
+.span-22 .evens{
+  width: 150px;
 }
 
+.alert, .notice{
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+  margin: 0px;
 
-
+}
+#error_explanation{
+  width:89%;
+}
+b{
+  display:block;
+  margin-bottom: 10px;
+}

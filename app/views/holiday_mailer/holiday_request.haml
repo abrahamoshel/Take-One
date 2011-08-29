@@ -13,7 +13,26 @@
       %tr
         %td{:width => '43px'}
         %td{:width => '480px'}
-          %h2 A New Holiday Request Off
+          %h2 #{@holiday.firstName} #{@holiday.lastName}'s Holiday Request Off
+
+          %p
+            %b Email: 
+            = @holiday.email
+          %p
+            %b First Choice:
+            #{@holiday.firstStart.strftime('%a %b %d, %Y')} - #{@holiday.firstEnd.strftime('%a %b %d, %Y')}
+          -if !@holiday.secondStart.nil?
+            %p
+              %b Second Choice:
+              #{@holiday.secondStart.strftime('%a %b %d, %Y')} - #{@holiday.secondEnd.strftime('%a %b %d, %Y')}
+          -if !@holiday.thirdStart.nil?
+            %p
+              %b Third Choice:
+              #{@holiday.thirdStart.strftime('%a %b %d, %Y')} - #{@holiday.thirdEnd.strftime('%a %b %d, %Y')}
+          %p
+            %b Mentor Manager:
+            = @holiday.manager.name
+
           %p
             An Email has already been sent to:
             %ul

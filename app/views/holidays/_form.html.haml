@@ -2,9 +2,8 @@
   -if @holiday.errors.any?
     #error_explanation
       %h2= "#{pluralize(@holiday.errors.count, "error")} prohibited this holiday from being saved:"
-      %ul
-        - @holiday.errors.full_messages.each do |msg|
-          %li= msg
+      - @holiday.errors.full_messages.each do |msg|
+        %b= msg
   %ul.span-22
     %li
       = f.text_field :firstName, :placeholder => "First Name"

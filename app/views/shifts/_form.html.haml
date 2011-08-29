@@ -1,10 +1,9 @@
 = semantic_form_for @shift do |f|
-  - if @shift.errors.any?
-    #errorExplanation.error.clear.span-10.push-7
-      %h3= "#{pluralize(@shift.errors.count, 'error')} prohibited this Shift from being saved:"
-      %ul
-        - @shift.errors.full_messages.each do |msg|
-          %li= msg
+  -if @shift.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@shift.errors.count, "error")} prohibited this holiday from being saved:"
+      - @shift.errors.full_messages.each do |msg|
+        %b= msg
   %h3.clear Contact Information:
   %ul.span-22
     %li

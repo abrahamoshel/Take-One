@@ -1,10 +1,9 @@
 = nested_form_for @request do |f|
   -if @request.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@request.errors.count, "error")} prohibited this request from being saved:"
-      %ul
-        - @request.errors.full_messages.each do |msg|
-          %li= msg
+      %h2= "#{pluralize(@request.errors.count, "error")} prohibited this holiday from being saved:"
+      - @request.errors.full_messages.each do |msg|
+        %b= msg
 
   .field
     = f.label :firstName

@@ -2,12 +2,14 @@ class HolidaysController < ApplicationController
   # GET /holidays
   # GET /holidays.xml
   def index
-    @holidays = Holiday.all
-
+    #@holidays = Holiday.all
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :html => @holidays } # index.html.erb
       format.xml  { render :xml => @holidays }
     end
+  end
+  def manager
+    @holidays = Holiday.joins(:manager).all
   end
 
   # GET /holidays/1
@@ -36,6 +38,7 @@ class HolidaysController < ApplicationController
 
   # GET /holidays/1/edit
   def edit
+    @title = "Editing Holiday Request"
     @holiday = Holiday.find(params[:id])
   end
 

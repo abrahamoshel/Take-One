@@ -1,36 +1,25 @@
-%p#notice= notice
+%h3.clear
+  #{@holiday.firstName} #{@holiday.lastName}'s Holiday Request
+%ul.span-22
+  %li
+    %b Email:
+    = @holiday.email
+  %li
+    %b First Choice:
+    #{@holiday.firstStart.strftime('%a %b %d, %Y')} - #{@holiday.firstEnd.strftime('%a %b %d, %Y')}
+  - if !@holiday.secondStart.nil?
+    %li
+      %b Second Choice:
+      #{@holiday.secondStart.strftime('%a %b %d, %Y')} - #{@holiday.secondEnd.strftime('%a %b %d, %Y')}
+  - if !@holiday.thirdStart.nil?
+    %li
+      %b Third Choice:
+      #{@holiday.thirdStart.strftime('%a %b %d, %Y')} - #{@holiday.thirdEnd.strftime('%a %b %d, %Y')}
+  %li
+    %b Mentor Manager:
+    = @holiday.manager.name
 
-%p
-  %b Firstname:
-  = @holiday.firstName
-%p
-  %b Lastname:
-  = @holiday.lastName
-%p
-  %b Email:
-  = @holiday.email
-%p
-  %b Firststart:
-  = @holiday.firstStart
-%p
-  %b Firstend:
-  = @holiday.firstEnd
-%p
-  %b Secondstart:
-  = @holiday.secondStart
-%p
-  %b Secondend:
-  = @holiday.secondEnd
-%p
-  %b Thirdstart:
-  = @holiday.thirdStart
-%p
-  %b Thirdend:
-  = @holiday.thirdEnd
-%p
-  %b Mentor Manager:
-  = @holiday.manager.name
-
-= link_to 'Edit', edit_holiday_path(@holiday)
-\|
-= link_to 'Back', new_holiday_path
+%p.clear
+  = link_to 'Edit', edit_holiday_path(@holiday)
+  \|
+  = link_to 'Back', new_holiday_path
