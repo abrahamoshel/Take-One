@@ -11,7 +11,7 @@ class HolidayMailer < ActionMailer::Base
           attachments.inline[$1] = File.read File.join(Rails.root, 'public', 'images', $1)
           attachments.inline[$1].url
       end
-      mail(:to => [holiday.email, "oldschoolpreach@mac.com", holiday.manager.email],
+      mail(:to => [holiday.email, "nmaschedule@apple.com", holiday.manager.email],
           :subject =>  "#{@holiday.department}'s '#{@holiday.firstName} #{@holiday.lastName} holiday request")
     end
 end

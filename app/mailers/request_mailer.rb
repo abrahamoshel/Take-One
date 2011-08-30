@@ -11,7 +11,7 @@ class RequestMailer < ActionMailer::Base
           attachments.inline[$1] = File.read File.join(Rails.root, 'public', 'images', $1)
           attachments.inline[$1].url
       end
-      mail(:to => [request.email, "oldschoolpreach@mac.com"],
+      mail(:to => [request.email, "nmaschedule@apple.com"],
           :subject => "A New Request")
     end
 end
