@@ -11,7 +11,7 @@ default :from => "NMA Schedule <nmaschedule@apple.com>"
           attachments.inline[$1].url
       end
         
-      mail(:to => [shift.email, shift.takingEmail, "oldschoolpreach@mac.com"],
+      mail(:to => [shift.email, shift.takingEmail, "nmaschedule@apple.com"],
           :subject => "A Shift was taken")
     end
 end
