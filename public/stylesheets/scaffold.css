@@ -496,8 +496,9 @@ color: #FFF;
 }
 #main .action .white{
   font: bold 14px/20px Helvetica;
-  margin-bottom: 0px;
+  margin: 2px;
   width: auto;
+  padding: 0px;
 }
 .span-22 .evens{
   width: 150px;

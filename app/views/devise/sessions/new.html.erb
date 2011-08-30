@@ -1,6 +1,6 @@
 <div id="user_nav">
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <p id="leftfield" class='span-11 prepend-1 column'><%= f.email_field :email, :placeholder => "UserName"%></p>
+    <p id="leftfield" class='span-11 prepend-1 column'><%= f.text_field :userName, :placeholder => "UserName"%></p>
 
     <p id='rightfield' class='span-11 column'><%= f.password_field :password, :placeholder => "Password" %></p>
 

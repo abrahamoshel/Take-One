@@ -26,7 +26,7 @@
           %td.evens #{f.takingFirstName} #{f.takingLastName}
           %td.action.evens
             = link_to 'view', shift_path(f), :class => 'button white'
-
+            = link_to 'remove', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button white'
 %h3.clear Open Shifts
 %br
 %table.span-22
@@ -49,4 +49,5 @@
       %td.evens #{f.takingFirstName} #{f.takingLastName}
       %td.action.evens
         = link_to 'take', edit_shift_path(f), :class => 'button white'
+        = link_to 'remove', shift_path(f), :confirm => "Are you sure", :method => :delete, :class => 'button white'
 
