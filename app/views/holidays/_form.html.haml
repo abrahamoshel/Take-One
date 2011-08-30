@@ -33,8 +33,9 @@
   %ul.span-22
     %li
       = f.text_area :comment, :placeholder => "Comments"
-  %h3.clear Mentor Manager
+  %h3.clear Mentor & Department
   %ul.span-22
     = f.input :manager, :as => :select, :collection => Manager.find(:all, :order => "name ASC"),:prompt=>"Choose Manager", :label => false
+    = f.input :department, :as => :select, :collection => ["Red Zone", "Back of House", "Family Room", "Business Team"],:prompt=>"Department", :label => false
   .span-22.clear
     = f.submit 'Save', :confirm => "Are you sure you want to take this shift?", :class => 'button white span-23'

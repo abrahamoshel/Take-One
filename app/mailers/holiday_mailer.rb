@@ -12,6 +12,6 @@ class HolidayMailer < ActionMailer::Base
           attachments.inline[$1].url
       end
       mail(:to => [holiday.email, "oldschoolpreach@mac.com", holiday.manager.email],
-          :subject =>  "#{@holiday.firstName} #{@holiday.lastName} holiday request")
+          :subject =>  "#{@holiday.department}'s '#{@holiday.firstName} #{@holiday.lastName} holiday request")
     end
 end

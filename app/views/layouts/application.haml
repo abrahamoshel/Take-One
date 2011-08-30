@@ -27,8 +27,8 @@
           %h2.last
             =@title
         %div#sidebar.span-6.last
-          = link_to image_tag('home.png') + "Home",{:controller => 'splash', :aciton =>'index'}
-          = link_to image_tag('switch.png') + "Post a Shift", shifts_path
+          = link_to image_tag('home.png') + "Home", employee_root_path
+          = link_to image_tag('switch.png') + "Shift Switch", shifts_path
           = #link_to image_tag('request.png') + "Request Off", new_request_path
           = link_to image_tag('holiday.png') + "Holiday Request", new_holiday_path
           = link_to image_tag('power.png') + "Sign out", destroy_employee_session_path
