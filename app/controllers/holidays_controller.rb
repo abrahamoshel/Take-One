@@ -51,7 +51,7 @@ class HolidaysController < ApplicationController
     respond_to do |format|
       if @holiday.save
         HolidayMailer.holiday_request(@holiday).deliver
-        format.html { redirect_to(@holiday, :notice => 'Holiday was successfully created.') }
+        format.html { redirect_to(employee_root_path, :notice => 'Holiday was successfully created.') }
         format.xml  { render :xml => @holiday, :status => :created, :location => @holiday }
       else
         format.html { render :action => "new" }
