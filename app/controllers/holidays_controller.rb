@@ -1,4 +1,5 @@
 class HolidaysController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /holidays
   # GET /holidays.xml
   def index
@@ -10,6 +11,7 @@ class HolidaysController < ApplicationController
   end
   def manager
     @holidays = Holiday.joins(:manager).all
+    @holidays = Holiday.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /holidays/1
@@ -87,4 +89,13 @@ class HolidaysController < ApplicationController
       format.xml  { head :ok }
     end
   end
+private
+  def sort_column  
+    Holiday.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+  end  
+
+  def sort_direction  
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
 end

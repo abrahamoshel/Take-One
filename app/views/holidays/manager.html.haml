@@ -1,9 +1,10 @@
 %table.span-24
   %tr.span-22
-    %th.even Name
-    %th.even Email
-    %th.even Mentor Manager
-    %th.even First Choice
+    %th.even=sortable "firstName", "Name"
+    %th.even=sortable "email", "Email"
+    %th.even=sortable "department", "Department"
+    %th.even=sortable "firstStart", "First Choice"
+    %th.even=sortable "created_at", "Submitted On"
 
 
   - @holidays.each do |holiday|
@@ -12,5 +13,6 @@
       %td.even= holiday.email
       %td.even= holiday.manager.name
       %td.even= holiday.firstStart.strftime('%a %b %d, %Y')
+      %td.even= holiday.created_at.strftime('%a %b %d, %Y')
       %td= link_to 'Details', holiday
 
