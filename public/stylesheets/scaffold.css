@@ -425,6 +425,9 @@ padding: 10px 10px 10px 10px;
 border-bottom-left-radius: 8px 8px;
 border-bottom-right-radius: 8px 8px;
 }
+#main ol span, #main p span{
+  font-weight: bold;
+}
 #main ul {
 color: black;
 background: white;
