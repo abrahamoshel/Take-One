@@ -26,7 +26,7 @@ class ShiftsController < ApplicationController
   def manager
     @title = "Manager View of Shifts"
     @shifts = Shift.all(:conditions => {:takingEmail => nil}, :order => "date DESC")
-    @shiftscovered = Shift.find(:all , :order => "date DESC", :limit => 30)
+    @shiftscovered = Shift.find(:all , :order => "date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
