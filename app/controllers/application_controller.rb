@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate_employee!
+
+  def authenticate_employee!
+    return if manager_signed_in?
+    super
+  end
+  
   #before_filter :authenticate
 
 private
