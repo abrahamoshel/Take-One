@@ -19,26 +19,32 @@
         %p.alert
           = alert
 
-      - if employee_signed_in?
+      - if manager_signed_in? || employee_signed_in?
         %div#header.span-24.last
           %h1.span-6.last
             NMA Schedule Team
             /=image_tag('apple/rails.png')png
           %h2.last
+            - if manager_signed_in?
+              %span.manager Manager:
             =@title
         %div#sidebar.span-6.last
           = link_to image_tag('home.png') + "Home", employee_root_path
           = link_to image_tag('switch.png') + "Shift Switch", shifts_path
           = #link_to image_tag('request.png') + "Request Off", new_request_path
           = link_to image_tag('holiday.png') + "Holiday Request", new_holiday_path
-          = link_to image_tag('power.png') + "Sign out", destroy_employee_session_path
+          -if manager_signed_in?
+            = link_to "Manager Link", admin_path
+            = link_to image_tag('power.png') + "Sign out", destroy_manager_session_path
+          -else
+            = link_to image_tag('power.png') + "Sign out", destroy_employee_session_path
 
           //Signed in as
           = #current_employee.email
       - else
         = #link_to "Sign up", new_employee_registration_path
         = #link_to "Sign in", new_employee_session_path
-      - if employee_signed_in?
+      - if manager_signed_in? || employee_signed_in?
         %div#main.span-19
           =yield
       -else

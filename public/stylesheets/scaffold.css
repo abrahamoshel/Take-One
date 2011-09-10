@@ -522,3 +522,6 @@ b{
   display:block;
   margin-bottom: 10px;
 }
+span.manager{
+  color:red;
+}
