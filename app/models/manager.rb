@@ -1,5 +1,6 @@
 class Manager < ActiveRecord::Base
   has_many :holidays, :dependent => :destroy
+  has_many :workshops, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

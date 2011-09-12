@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909234505) do
+ActiveRecord::Schema.define(:version => 20110912174246) do
 
   create_table "employees", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -84,6 +84,14 @@ ActiveRecord::Schema.define(:version => 20110909234505) do
     t.boolean  "reports_only"
   end
 
+  create_table "registrations", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "workshop_id"
+    t.integer  "manager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "requests", :force => true do |t|
     t.string   "firstName"
     t.string   "lastName"
@@ -106,6 +114,15 @@ ActiveRecord::Schema.define(:version => 20110909234505) do
     t.string   "takingFirstName"
     t.string   "takingLastName"
     t.string   "takingEmail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "workshops", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "startDate"
+    t.date     "endDate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

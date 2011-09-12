@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @workshop.name
+%p
+  %b Description:
+  = @workshop.description
+%p
+  %b Startdate:
+  = @workshop.startDate
+%p
+  %b Enddate:
+  = @workshop.endDate
+
+= link_to 'Edit', edit_workshop_path(@workshop)
+\|
+= link_to 'Back', workshops_path
