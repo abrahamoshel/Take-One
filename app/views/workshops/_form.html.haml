@@ -1,0 +1,24 @@
+= semantic_form_for @workshop do |f|
+  -if @workshop.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@workshop.errors.count, "error")} prohibited this workshop from being saved:"
+      %ul
+        - @workshop.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :startDate
+    = f.date_select :startDate
+  .field
+    = f.label :endDate
+    = f.date_select :endDate
+
+    = f.input :manager, :as => :select, :collection => Manager.find(:all, :order => "name ASC"), :label_method => :firstName, :prompt=>"Choose Manager", :label => false, :include_blank => false    
+  .actions
+    = f.submit 'Save'

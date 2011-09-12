@@ -3,9 +3,12 @@ class Employee < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  
+  has_many :registrations
+  has_many :workshops, :through => :registrations
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :userName, :firstName, :lastName
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :userName, :firstName, :lastName, :workshop_ids
+
 
   validates_format_of :email, :with => /apple\.com/, :message => "You must use your Apple Email"
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  employee_id: 1
+  workshop_id: 1
+  manager_id: 1
+
+two:
+  employee_id: 1
+  workshop_id: 1
+  manager_id: 1

@@ -1,4 +1,8 @@
 Takeone::Application.routes.draw do
+  resources :registrations
+
+  resources :workshops
+
   devise_for :employees, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
   devise_for :managers, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
 
