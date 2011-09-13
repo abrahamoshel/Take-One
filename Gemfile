@@ -15,6 +15,7 @@ gem 'heroku'
 gem "nested_form"
 gem 'meta-tags', :require => 'meta_tags'
 gem 'devise'
+gem 'paperclip'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'

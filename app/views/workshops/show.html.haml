@@ -1,28 +1,31 @@
 %p#notice= notice
-
-%p
-  %b Name:
+= image_tag @workshop.albumcover.url(:thumb)
+%h3
   = @workshop.name
-%p
-  %b Description:
-  = @workshop.description
-%p
-  %b Startdate:
-  = @workshop.startDate
-%p
-  %b Enddate:
-  = @workshop.endDate
+  %br
+  = "#{@workshop.manager.firstName} #{@workshop.manager.lastName}"
+%ul.span-22
+  %li
+    = @workshop.description
 
-- @workshop.employees.each do |m|
-  %p
-    = m.firstName
-    = link_to 'Destroy', workshop_interest_path(@workshop, m), :confirm => 'Are you sure?', :method => :delete
+%ul.span-22
+  -if @workshop.endDate.nil?
+    %li= @workshop.startDate.strftime('%a %b %d, %Y')
+  -else
+    %li= "#{@workshop.startDate.strftime('%b %d')} - #{@workshop.endDate.strftime('%d, %Y')}"
+
+-!if @workshop.employees.nil?
+  %ul.span-22
+    - @workshop.employees.each do |m|
+      %li
+        %span.span-17= "#{m.firstName} #{m.lastName}"
+        %span= m.email
 
 - semantic_form_for [@workshop, Interest.new] do |f|
-  = #f.input :employee_id, :html_options => {:value => "#{employee_id}"}
-  - @employee
-  = f.submit "Register"
+  .span-22.clear
+    -if manager_signed_in?
+      = link_to 'Edit', edit_workshop_path(@workshop), :class => "white button manager"
+    -else
+      = f.submit "Register", :class => "white button span-23"
 
-= link_to 'Edit', edit_workshop_path(@workshop)
-\|
 = link_to 'Back', workshops_path

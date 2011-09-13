@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110912204756) do
+ActiveRecord::Schema.define(:version => 20110913173652) do
 
   create_table "employees", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -126,6 +126,10 @@ ActiveRecord::Schema.define(:version => 20110912204756) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "manager_id"
+    t.string   "albumcover_file_name"
+    t.string   "albumcover_content_type"
+    t.integer  "albumcover_file_size"
+    t.datetime "albumcover_updated_at"
   end
 
 end
