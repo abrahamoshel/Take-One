@@ -1,0 +1,23 @@
+%h1 Listing interest
+
+%table
+  %tr
+    %th Employee
+    %th Workshop
+    %th Manager
+    %th
+    %th
+    %th
+
+  - @interests.each do |interest|
+    %tr
+      %td= interest.employee_id
+      %td= interest.workshop_id
+      %td= interest.manager_id
+      %td= link_to 'Show', interest
+      %td= link_to 'Edit', edit_interest_path(interest)
+      %td= link_to 'Destroy', interest, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New interest', new_interest_path

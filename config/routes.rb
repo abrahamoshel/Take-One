@@ -1,5 +1,5 @@
 Takeone::Application.routes.draw do
-  resources :registrations
+  resources :interests
 
   resources :workshops
 
@@ -17,7 +17,6 @@ Takeone::Application.routes.draw do
   devise_for :employees do
     get '/', :to => "devise/sessions#new"
   end
-
   root :to => "devise/sessions#new"
   match '/retail' => "splash#index", :as => :employee_root
 
@@ -25,5 +24,9 @@ Takeone::Application.routes.draw do
   match "/admin" => "holidays#manager"
 
   match "/shifts/shift_taken/:id" => "shifts#shift_taken"
-
+  
+  resources :workshops do
+    resources :interests
+  end
+  
 end

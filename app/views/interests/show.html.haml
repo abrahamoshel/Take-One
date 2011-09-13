@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Employee:
+  = @interest.employee_id
+%p
+  %b Workshop:
+  = @interest.workshop_id
+%p
+  %b Manager:
+  = @interest.manager_id
+
+= link_to 'Edit', edit_interest_path(@interest)
+\|
+= link_to 'Back', interests_path

@@ -1,0 +1,27 @@
+= semantic_form_for @interest do |f|
+  -if @interest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@registration.errors.count, "error")} prohibited this registration from being saved:"
+      %ul
+        - @registration.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = #f.label :employee_id
+    = #f.text_field :employee_id
+  .field
+    = #f.label :workshop_id
+    = #f.text_field :workshop_id
+  .field
+    = f.label :manager_id
+    = f.text_field :manager_id
+
+    = f.input :manager_id, :as => :select, :collection => Manager.find(:all, :order => "firstName ASC"), :label_method => :firstName, :prompt=>"Choose Manager", :label => false, :include_blank => false
+    = f.input :workshop_id, :as => :select, :collection => Workshop.find(:all, :order => "name ASC"), :label_method => :name, :prompt=>"Choose Workshop", :label => false, :include_blank => false
+    = #f.input :employee_id, :as => :select, :collection => Employee.find(:all, :order => "firstName ASC"), :label_method => :firstName, :prompt=>"Choose Employee", :label => false, :include_blank => false
+    = #f.input :employee_id, :html_options => {:value => "#{current_employee.id}"}
+  %ul.span-22
+    %li= @interest.employee.firstName
+    %li= @interest.employee.email
+  .actions
+    = f.submit 'Save'
