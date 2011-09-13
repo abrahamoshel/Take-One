@@ -13,6 +13,16 @@
   %b Enddate:
   = @workshop.endDate
 
+- @workshop.employees.each do |m|
+  %p
+    = m.firstName
+    = link_to 'Destroy', workshop_interest_path(@workshop, m), :confirm => 'Are you sure?', :method => :delete
+
+- semantic_form_for [@workshop, Interest.new] do |f|
+  = #f.input :employee_id, :html_options => {:value => "#{employee_id}"}
+  - @employee
+  = f.submit "Register"
+
 = link_to 'Edit', edit_workshop_path(@workshop)
 \|
 = link_to 'Back', workshops_path

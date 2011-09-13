@@ -4,8 +4,8 @@ class Employee < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  has_many :registrations
-  has_many :workshops, :through => :registrations
+  has_many :interests
+  has_many :workshops, :through => :interests
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :userName, :firstName, :lastName, :workshop_ids
 

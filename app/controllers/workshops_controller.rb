@@ -14,7 +14,9 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1.xml
   def show
     @workshop = Workshop.find(params[:id])
-
+    @employee = current_employee
+    #redirect_to @post
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @workshop }
