@@ -1,4 +1,6 @@
-%h1 Listing workshops
+-if manager_signed_in?
+  .span-22.clear
+    = link_to 'New Workshop', new_workshop_path, :class => "button white manager"
 
 %table
   %tr
@@ -20,6 +22,3 @@
       %td= link_to 'Edit', edit_workshop_path(workshop)
       %td= link_to 'Destroy', workshop, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Workshop', new_workshop_path

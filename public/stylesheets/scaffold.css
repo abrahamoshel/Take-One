@@ -478,7 +478,9 @@ text-shadow: white 0px 1px 0;
 margin-bottom: 50px;
 width: 100%;
 }
-
+#main .manager{
+  width: 96%;
+}
 #main #back{
 left: 320px;
 right: auto;
