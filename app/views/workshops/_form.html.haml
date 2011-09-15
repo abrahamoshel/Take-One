@@ -1,4 +1,4 @@
-= semantic_form_for @workshop, :html => { :multipart => true } do |f|
+= semantic_nested_form_for @workshop, :html => { :multipart => true } do |f|
   -if @workshop.errors.any?
     #error_explanation
       %h2= "#{pluralize(@workshop.errors.count, "error")} prohibited this workshop from being saved:"
@@ -20,6 +20,10 @@
   .field
     = f.label :endDate
     = f.date_select :endDate
+  .field
+    = f.semantic_fields_for :appointments do |t|
+      #{t.time_select :apptime, :class => "title", :twelve_hour => true,  :minute_step => 15}
+    = f.link_to_add 'Add Time', :appointments, :classes => 'button'
 
     = f.input :manager, :as => :select, :collection => Manager.find(:all, :order => "name ASC"), :label_method => :firstName, :prompt=>"Choose Manager", :label => false, :include_blank => false    
   .actions

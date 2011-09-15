@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ryanb/nested_form.git
+  revision: 57f32788f1952bcd633057b4b56b69b51df17610
+  specs:
+    nested_form (0.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -34,7 +40,7 @@ GEM
     activesupport (3.0.3)
     addressable (2.2.6)
     arel (2.0.10)
-    bcrypt-ruby (3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
     capistrano (2.8.0)
       highline
@@ -85,7 +91,6 @@ GEM
     meta-tags (1.2.4)
       actionpack
     mime-types (1.16)
-    nested_form (0.1.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -155,7 +160,7 @@ DEPENDENCIES
   jammit
   jquery-rails (>= 0.2.6)
   meta-tags
-  nested_form
+  nested_form!
   nokogiri
   paperclip
   passenger

@@ -14,13 +14,15 @@
   -else
     %li= "#{@workshop.startDate.strftime('%b %d')} - #{@workshop.endDate.strftime('%d, %Y')}"
 
--!if @workshop.employees.nil?
+-if @workshop.employees.count > 0
   %ul.span-22
-    - @workshop.employees.each do |m|
+    - @workshop.interests.each do |m|
       %li
-        %span.span-17= "#{m.firstName} #{m.lastName}"
-        %span= m.email
-
+        %span.span-17= "#{m.employee.firstName} #{m.employee.lastName}"
+        %span= #m.interest.apptime
+        %span= m.employee.email
+= semantic_fields_for :interest do |f|
+  = f.input :appselect, :as => :select, :collection => @workshop.appointments, :label_method => :apptime, :prompt => "Choose a Time"
 - semantic_form_for [@workshop, Interest.new] do |f|
   .span-22.clear
     -if manager_signed_in?

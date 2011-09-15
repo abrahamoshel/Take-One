@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  workshop_id: 1
+  apptime: 2011-09-13 19:29:20
+
+two:
+  workshop_id: 1
+  apptime: 2011-09-13 19:29:20
