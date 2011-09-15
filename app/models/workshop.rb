@@ -1,6 +1,10 @@
 class Workshop < ActiveRecord::Base
   has_many :interests
   has_many :employees, :through => :interests
+  has_many :appointments
+  accepts_nested_attributes_for :appointments, :allow_destroy => true
+
+
   belongs_to :manager
   has_attached_file :albumcover,
     :styles => { :medium => ["300x300>", :png],  :thumb => ["150x150>", :png]},

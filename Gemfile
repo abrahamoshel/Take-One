@@ -12,7 +12,7 @@ gem 'jammit'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'passenger'
 gem 'heroku'
-gem "nested_form"
+gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'devise'
 gem 'paperclip'

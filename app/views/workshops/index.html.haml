@@ -2,23 +2,12 @@
   .span-22.clear
     = link_to 'New Workshop', new_workshop_path, :class => "button white manager"
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th Startdate
-    %th Enddate
-    %th
-    %th
-    %th
-
-  - @workshops.each do |workshop|
-    %tr
-      %td= workshop.name
-      %td= workshop.description
-      %td= workshop.startDate
-      %td= workshop.endDate
-      %td= link_to 'Show', workshop
-      %td= link_to 'Edit', edit_workshop_path(workshop)
-      %td= link_to 'Destroy', workshop, :confirm => 'Are you sure?', :method => :delete
+- @workshops.each do |workshop|
+  %p.span-4
+    = link_to(image_tag(workshop.albumcover(:thumb)), workshop_path(workshop))
+    %br
+    = workshop.name
+    =# link_to 'Show', workshop
+    =# link_to 'Edit', edit_workshop_path(workshop)
+    =# link_to 'Destroy', workshop, :confirm => 'Are you sure?', :method => :delete
 
