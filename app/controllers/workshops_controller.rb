@@ -2,6 +2,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.xml
   def index
+    @title = "Available Workshops"
     @workshops = Workshop.all
 
     respond_to do |format|
@@ -14,8 +15,18 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1.xml
   def show
     @workshop = Workshop.find(params[:id])
+    @title = @workshop.name
     @employee = current_employee
     #redirect_to @post
+    #call the method in Workshop and gets a list of interest and appoint that match than delete the matching ones
+    available_times = @workshop.available_times
+    available_times.each do |interest, appointments|
+      appointments.each do |appointment|
+        @workshop.appointments.delete(appointment)
+      end
+    end
+    #save the model so the that database is updated
+    @workshop.save
     
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +38,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/new.xml
   def new
     @workshop = Workshop.new
-
+    @title = "Creating a New Workshop"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workshop }
@@ -37,6 +48,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1/edit
   def edit
     @workshop = Workshop.find(params[:id])
+    @title = "Editing #{@workshop.name}"
   end
 
   # POST /workshops

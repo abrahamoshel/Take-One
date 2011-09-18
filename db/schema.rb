@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20110914051308) do
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "appselect"
+    t.time     "appselect"
   end
 
   create_table "managers", :force => true do |t|

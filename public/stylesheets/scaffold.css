@@ -450,7 +450,7 @@ width: 100%;
 -webkit-box-shadow: none;
 }
 #main ul li select{
-  width: 5%;
+  width: auto;
 }
 #main ul #holiday_manager_input select, #main ul #holiday_department_input select{
   width: auto;
@@ -526,4 +526,30 @@ b{
 }
 span.manager{
   color:red;
+}
+#main li.add_field{
+  padding: 0px;
+}
+#main li.add_field div li{
+  color: #666;
+  border-bottom: 1px solid #B4B4B4;
+  list-style-type: none;
+  padding: 10px 10px 10px 10px;
+-webkit-border-top-left-radius: 0px;
+-webkit-border-top-right-radius: 0px;
+border-top-left-radius: 0px 0px;
+border-top-right-radius: 0px 0px;
+-webkit-border-bottom-left-radius: 0px;
+-webkit-border-bottom-right-radius: 0px;
+border-top-bottom-radius: 0px 0px;
+border-top-bottom-radius: 0px 0px;
+  
+}
+.add_field a{
+color: #777;
+font: bold 18px Helvetica;
+text-shadow: white 0 1px 0;
+padding: 10px 10px 10px 10px;
+display: block;
+
 }

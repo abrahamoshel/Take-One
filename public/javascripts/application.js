@@ -45,7 +45,7 @@ switch (toDay) {
                 default:
                     break;
                 }
-  $("#request_startDate, #request_endDate, #holiday_firstStart, #holiday_firstEnd, #holiday_secondStart, #holiday_secondEnd, #holiday_thirdStart, #holiday_thirdEnd").datepicker({
+  $('input[id*="start"], input[id*="end"], input[id*="Start"], input[id*="End"]').datepicker({
     dateFormat: 'D M d, yy',
     minDate: dateSelected,
     beforeShowDay: nationalDays
