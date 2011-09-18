@@ -42,6 +42,8 @@ class InterestsController < ApplicationController
   def create
     @workshop = Workshop.find(params[:workshop_id])
     @interest = @workshop.interests.new(params[:interest])
+
+    @workshop.save
     @interest.employee = current_employee
     @interest.manager_id = @workshop.manager_id
     respond_to do |format|
@@ -49,7 +51,7 @@ class InterestsController < ApplicationController
         format.html { redirect_to(@workshop, :notice => 'Interest was successfully created.') }
         format.xml  { render :xml => @interest, :status => :created, :location => @interest }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to @workshop, :alert => 'You must choose a Time' }
         format.xml  { render :xml => @interest.errors, :status => :unprocessable_entity }
       end
     end

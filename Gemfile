@@ -19,4 +19,5 @@ gem 'paperclip'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
+  gem 'rspec'
 end

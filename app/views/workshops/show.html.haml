@@ -3,7 +3,7 @@
 %h3
   = @workshop.name
   %br
-  = "#{@workshop.manager.firstName} #{@workshop.manager.lastName}"
+  = @workshop.manager_full_name
 %ul.span-22
   %li
     = @workshop.description
@@ -18,16 +18,17 @@
   %ul.span-22
     - @workshop.interests.each do |m|
       %li
-        %span.span-17= "#{m.employee.firstName} #{m.employee.lastName}"
-        %span= #m.interest.apptime
+        %span.span-8= m.full_name
+        %span.span-8= #m.selected_time
+        %span.span-8= m.selected_time if !@workshop.appointments.blank?
         %span= m.employee.email
-= semantic_fields_for :interest do |f|
-  = f.input :appselect, :as => :select, :collection => @workshop.appointments, :label_method => :apptime, :prompt => "Choose a Time"
 - semantic_form_for [@workshop, Interest.new] do |f|
   .span-22.clear
     -if manager_signed_in?
       = link_to 'Edit', edit_workshop_path(@workshop), :class => "white button manager"
     -else
+      %ul.span-24
+        = f.input :appselect, :as => :select, :collection => @workshop.appointments, :value_method => :apptime, :label_method => :appointment_times, :prompt => "Choose a Time", :label => false
       = f.submit "Register", :class => "white button span-23"
 
-= link_to 'Back', workshops_path
+= link_to 'Back', workshops_path, :id => 'back'
