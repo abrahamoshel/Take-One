@@ -1,5 +1,5 @@
 %h3.clear
-  #{@holiday.firstName} #{@holiday.lastName}'s Holiday Request
+  #{@holiday.holiday_name}'s Holiday Request
 %ul.span-22
   %li
     %b Email:
@@ -17,8 +17,10 @@
       #{@holiday.thirdStart.strftime('%a %b %d, %Y')} - #{@holiday.thirdEnd.strftime('%a %b %d, %Y')}
   %li
     %b Mentor Manager:
-    = @holiday.manager.name
-
+    = @holiday.manager_full_name
+  %li
+    %b Department:
+    = @holiday.department
 %p.clear
   = link_to 'Edit', edit_holiday_path(@holiday)
   \|
