@@ -11,7 +11,7 @@
     %tr.span-22
       %td.even #{holiday.firstName} #{holiday.lastName}
       %td.even= holiday.email
-      %td.even= holiday.manager.name
+      %td.even= holiday.department
       %td.even= holiday.firstStart.strftime('%a %b %d, %Y')
       %td.even= holiday.created_at.strftime('%a %b %d, %Y')
       %td= link_to 'Details', holiday
