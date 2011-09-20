@@ -1,0 +1,17 @@
+-if manager_signed_in?
+  %p.span-22.clear
+    = link_to 'New Workshop', new_workshop_path, :class => "button white manager"
+
+- @workshops.each do |workshop|
+  %p.span-4
+    = link_to (workshop.name), workshop_path(workshop)
+    %br
+    by #{workshop.manager_full_name}
+    %br
+    #{workshop.interests.count} people signed up
+    %br
+    = workshop.startDate.strftime("%m/%d/%Y")
+    =# link_to 'Show', workshop
+    =# link_to 'Edit', edit_workshop_path(workshop)
+    =# link_to 'Destroy', workshop, :confirm => 'Are you sure?', :method => :delete
+

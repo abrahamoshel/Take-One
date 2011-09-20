@@ -3,8 +3,8 @@ Takeone::Application.routes.draw do
 
   resources :workshops
 
-  devise_for :employees, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
-  devise_for :managers, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
+  devise_for :employees, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
+  devise_for :managers, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
 
   resources :holidays, :except => :index
 
@@ -22,6 +22,7 @@ Takeone::Application.routes.draw do
 
   match "/manager" => "shifts#manager"
   match "/admin" => "holidays#manager"
+  match "workshoplist" =>  'workshops#workshoplist'
 
   match "/shifts/shift_taken/:id" => "shifts#shift_taken"
   

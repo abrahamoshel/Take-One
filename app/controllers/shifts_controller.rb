@@ -39,7 +39,7 @@ class ShiftsController < ApplicationController
   def show
     @title = "Shift Switch"
     @shift = Shift.find(params[:id])
-    @shift.endtime 
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @shift }
@@ -54,7 +54,9 @@ class ShiftsController < ApplicationController
     @shift.date ||= Date.today.strftime('%a %b %d, %Y')
     @shift.starttime ||= Time.now
     @shift.endtime ||= Time.now+5.hour
-
+    @shift.email = current_employee.email
+    @shift.firstName = current_employee.firstName
+    @shift.lastName = current_employee.lastName
     respond_to do |format|
         format.html # new.html.erb
         format.xml  { render :xml => @shift }
@@ -65,6 +67,9 @@ class ShiftsController < ApplicationController
   def edit
     @title = "Shift Switch"
     @shift = Shift.find(params[:id])
+    @shift.takingFirstName = current_employee.firstName
+    @shift.takingLastName = current_employee.lastName
+    @shift.takingEmail = current_employee.email
   end
 
   # POST /shifts

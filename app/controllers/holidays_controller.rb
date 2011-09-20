@@ -31,6 +31,9 @@ class HolidaysController < ApplicationController
   def new
     @title = "New Holiday Request"
     @holiday = Holiday.new
+    @holiday.firstName = current_employee.firstName
+    @holiday.lastName = current_employee.lastName
+    @holiday.email = current_employee.email
 
     respond_to do |format|
       format.html # new.html.erb
