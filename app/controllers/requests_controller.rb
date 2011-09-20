@@ -29,6 +29,10 @@ class RequestsController < ApplicationController
     @title = "New Rquest Off"
     @request = Request.new
     0.times { @request.hours.build }
+    @request.firstName = current_employee.firstName
+    @request.lastName = current_employee.lastName
+    @request.email = current_employee.email
+
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,0 +1,21 @@
+#main.span-19.devise
+  %h2 Sign up
+
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| 
+    = devise_error_messages! 
+
+    %h3 Basic Information
+    %ul
+      %li= f.text_field :firstName, :placeholder => 'First Name'
+      %li= f.text_field :lastName, :placeholder => 'Last Name'
+      %li= f.email_field :email, :placeholder => 'Work Email'
+
+    %h3 Account Information
+    %ul
+      %li= f.text_field :userName, :placeholder => 'UserName'
+      %li= f.password_field :password, :placeholder => 'Password'
+      %li= f.password_field :password_confirmation, :placeholder => 'Confrim Password'
+
+    = f.submit "Sign up", :class => 'white button'
+
+  = render :partial => "devise/shared/links"

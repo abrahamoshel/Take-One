@@ -1,10 +1,20 @@
 class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.xml
+   def workshoplist
+    @title = "All Workshops"
+    @workshops = Workshop.order("startDate ASC")
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @workshops }
+    end
+  end
+
   def index
     @title = "Available Workshops"
-    @workshops = Workshop.all
+    @workshops = Workshop.find(:all, :conditions => ["startDate >= ?", Date.today - 1], :order => "startDate DESC", :limit => 30)
 
+    #ate => Date.today - 2...Date.today + 65
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @workshops }

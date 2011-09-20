@@ -19,8 +19,10 @@
     - @workshop.interests.each do |m|
       %li
         %span.span-8= m.full_name
-        %span.span-8= #m.selected_time
-        %span.span-8= m.selected_time if !@workshop.appointments.blank?
+        - if !m.appselect.blank?
+          %span.span-8= m.selected_time
+        - else
+          %span.span-8 On Wait List
         %span= m.employee.email
 - semantic_form_for [@workshop, Interest.new] do |f|
   .span-22.clear
@@ -29,6 +31,6 @@
     -else
       %ul.span-24
         = f.input :appselect, :as => :select, :collection => @workshop.appointments, :value_method => :apptime, :label_method => :appointment_times, :prompt => "Choose a Time", :label => false
-      = f.submit "Register", :class => "white button span-23"
+      = f.submit "Register", :class => "white button span-23", :confirm => 'Do you really want to sign up for this workshop?'
 
 = link_to 'Back', workshops_path, :id => 'back'

@@ -396,6 +396,10 @@ form .holiday{
   min-height: 100%;
   padding: 20px 0 0 20px;
 }
+#main.devise{
+  position: relative;
+  left: 0px;
+}
 
 /* iphone table */
 #main li:first-child {
