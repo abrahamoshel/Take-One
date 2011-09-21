@@ -1,36 +1,20 @@
-= resource_name.to_s.humanize
-
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| 
   = devise_error_messages! 
 
-  = f.label :firstName 
-  = f.email_field :firstName 
+  %h3.clear Basic Information
+  %ul.span-22
+    %li= f.email_field :firstName 
+    %li= f.email_field :lastName 
+    %li= f.email_field :email 
+    %li= f.email_field :homeEmail, :placeholder => 'Home Email'
 
-  = f.label :lastName 
-  = f.email_field :lastName 
+  %h3.clear Account Information
+  %ul.span-22
+    %li= f.text_field :userName 
+    %li= f.password_field :password, :placeholder => 'leave blank if you don\'t want to change it'
+    %li= f.password_field :password_confirmation, :placeholder => 'confirm new password if you want to change'
+    %li= f.password_field :current_password, :placeholder => 'we need your current password to confirm your changes'
+  .span-22
+    = f.submit "Update", :class => 'white button'
 
-  = f.label :email 
-  = f.email_field :email 
-
-  = f.label :userName 
-  = f.text_field :userName 
-
-
-  = f.label :password  <i>(leave blank if you don't want to change it)</i>
-  = f.password_field :password 
-
-  = f.label :password_confirmation 
-  = f.password_field :password_confirmation 
-
-  = f.label :current_password  <i>(we need your current password to confirm your changes)</i>
-  = f.password_field :current_password 
-
-  = f.submit "Update" 
- end 
-
-%h3 Cancel my account
-
-Unhappy?
-= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete
-
-= link_to "Back", :back 
+= link_to "Back", :back, :id => 'back'

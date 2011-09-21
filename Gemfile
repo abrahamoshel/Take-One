@@ -16,6 +16,7 @@ gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'devise'
 gem 'paperclip'
+gem 'aws-s3'
 
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
