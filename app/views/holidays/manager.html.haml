@@ -2,7 +2,7 @@
   %tr.span-22
     %th.even=sortable "firstName", "Name"
     %th.even=sortable "email", "Email"
-    %th.even=sortable "department", "Department"
+    %th.even=sortable "manager_id", "Manager"
     %th.even=sortable "firstStart", "First Choice"
     %th.even=sortable "created_at", "Submitted On"
 
@@ -11,7 +11,7 @@
     %tr.span-22
       %td.even #{holiday.firstName} #{holiday.lastName}
       %td.even= holiday.email
-      %td.even= holiday.department
+      %td.even= holiday.manager_full_name
       %td.even= holiday.firstStart.strftime('%a %b %d, %Y')
       %td.even= holiday.created_at.strftime('%a %b %d, %Y')
       %td= link_to 'Details', holiday

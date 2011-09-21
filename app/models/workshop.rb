@@ -11,7 +11,13 @@ class Workshop < ActiveRecord::Base
     :styles => { :medium => ["300x300>", :png],  :thumb => ["150x150>", :png]},
     :convert_options => {:medium => Proc.new{self.convert_options}, :thumb => Proc.new{self.convert_options}},
     :url => "/assets/albumcovers/:id/:style/:basename.:extension",  
-    :path => ":rails_root/public/assets/albumcovers/:id/:style/:basename.:extension"
+    :path => "#{Rails.public_path}/assets/albumcovers/:id/:style/:basename.:extension",
+    :storage => :s3,
+    :bucket => 'retailapp',
+    :s3_credentials => {
+      :access_key_id => S3_KEY,
+      :secret_access_key => S3_SECRET
+    }
   
   validates_attachment_presence :albumcover  
   validates_attachment_size :albumcover, :less_than => 2.megabytes  

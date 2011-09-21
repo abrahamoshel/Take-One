@@ -35,8 +35,10 @@
           = link_to image_tag('holiday.png') + "Holiday Request", new_holiday_path
           = link_to image_tag('development.png') + "Development", workshops_path
           -if manager_signed_in?
+            = link_to 'Manager Profile', edit_manager_registration_path
             = link_to image_tag('power.png') + "Sign out", destroy_manager_session_path
           -else
+            = link_to 'Employee Profile', edit_employee_registration_path
             = link_to image_tag('power.png') + "Sign out", destroy_employee_session_path
 
           //Signed in as
