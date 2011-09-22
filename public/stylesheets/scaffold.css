@@ -531,6 +531,11 @@ b{
 span.manager{
   color:red;
 }
+span.login{
+left: 30px;
+position: relative;
+top: 20px;
+}
 #main li.add_field{
   padding: 0px;
 }
