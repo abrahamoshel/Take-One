@@ -14,7 +14,7 @@ gem 'passenger'
 gem 'heroku'
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'meta-tags', :require => 'meta_tags'
-gem 'devise'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'paperclip'
 gem 'aws-s3'
 
