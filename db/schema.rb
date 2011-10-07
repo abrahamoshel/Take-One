@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922195858) do
+ActiveRecord::Schema.define(:version => 20110922232217) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "workshop_id"
@@ -36,8 +36,12 @@ ActiveRecord::Schema.define(:version => 20110922195858) do
     t.string   "lastName"
     t.string   "userName"
     t.string   "homeEmail"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "employees", ["confirmation_token"], :name => "index_employees_on_confirmation_token", :unique => true
   add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
   add_index "employees", ["reset_password_token"], :name => "index_employees_on_reset_password_token", :unique => true
 

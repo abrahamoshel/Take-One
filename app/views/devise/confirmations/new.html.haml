@@ -1,0 +1,11 @@
+#main.span-19.devise
+  %h3 Resend confirmation instructions
+
+  = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| 
+    = devise_error_messages! 
+
+    %ul
+      %li= f.email_field :email, :placeholder => 'Apple Email Address'
+    = f.submit "Resend confirmation instructions", :class => 'white button'
+
+  = render :partial => "devise/shared/links" 

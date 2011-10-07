@@ -1,7 +1,7 @@
 class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.xml
-  before_filter :authenticate_manager!, :only =>  :edit
+  before_filter :authenticate_manager!, :only =>  [:edit, :new]
    def workshoplist
     @title = "All Workshops"
     @workshops = Workshop.order("startDate ASC")
