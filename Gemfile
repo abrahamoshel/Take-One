@@ -21,4 +21,6 @@ gem 'aws-s3'
 group :development do
   gem 'capistrano-ext', '~> 1.2.1'
   gem 'rspec'
+  gem 'yaml_db'
+  #gem 'rspec-rails'
 end
