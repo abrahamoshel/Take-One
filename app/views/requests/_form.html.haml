@@ -5,48 +5,39 @@
       - @request.errors.full_messages.each do |msg|
         %b= msg
 
-  .field
-    = f.label :firstName
-    %br
-    = f.text_field :firstName
-  .field
-    = f.label :lastName
-    %br
-    = f.text_field :lastName
-  .field
-    = f.label :email
-    %br
-    = f.text_field :email
-  .field
-    =f.label :startDate
-    %br
-    =f.text_field :startDate
-  .field
-    =f.label :endDate
-    %br
-    =f.text_field :endDate
-  %p Notice: if you do not enter in the date time alloted to sick or vacation it will not be entered in.
+  %ul.span-22
+    %li
+      = f.text_field :firstName, :placeholder => "First Name"
+    %li
+      = f.text_field :lastName, :placeholder => "Last Name"
+    %li
+      = f.text_field :email, :placeholder => "Email"
+  %h3.clear Request Date Range
+  %ul.span-22
+    %li
+      = f.text_field :startDate, :placeholder => "Start Date"
+    %li
+      = f.text_field :endDate, :placeholder => "End Date"
+  %p.clear Notice: if you do not enter in the date time alloted to sick or vacation it will not be entered in.
   = f.fields_for :hours do |t|
+    .span-12.append-8
+      = t.link_to_remove "Remove this Date", :class => "button white"
     .clearright.clearfix
-      .span-6
-        = t.label :dates, :label => 'Request Date'
-        %br
-        = t.date_select :dates
-      .span-5
-        .span-2
-          = t.label :vacation
-          = t.text_field :vacation, :size => 5
-        .span-2
-          = t.label :sick
-          = t.text_field :sick, :size => 5
-      .span-4.append-8
-        = t.link_to_remove "Remove this Date", :class => "button"
-  .clearright.clearfix
-    %br
-    = f.link_to_add "Add a date", :hours, :class => "button"
-  .field
-    = f.label :comment
-    %br
-    = f.text_area :comment
-  .actions
-    = f.submit 'Save'
+      %h3.clear Date in Request Range
+      %ul
+        %li
+          = t.date_select :dates, :placeholder => "Date for Hours Requested"
+      %h3.clear Hours
+      %ul
+        %li
+          = t.text_field :vacation, :size => 5, :placeholder => "Number of Vaction Hours"
+        %li
+          = t.text_field :sick, :size => 5, :placeholder => "Number of Sick Hours"
+  .clearright.clearfix.span-14
+    = f.link_to_add "Add a date", :hours, :class => 'button white'
+  %h3.clear Comments
+  %ul.span-22
+    %li
+      = f.text_area :comment, :placeholder => "Comments"
+  .span-22.clear
+    = f.submit 'Save', :confirm => "Double check your Request is correct, and you have entered your sick and vacation hours", :class => 'button white span-23'

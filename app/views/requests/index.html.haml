@@ -1,8 +1,3 @@
-%h1.clear Listing requests
-
-.append-bottom.clearfix
-  = link_to 'Request Off', new_request_path, :class => "clear clearfix button"
-
 - @requests.each do |request|
   %table.span-6
     %tr
