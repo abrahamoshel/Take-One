@@ -12,7 +12,7 @@ Takeone::Application.routes.draw do
 
   resources :shifts
 
-  match '/god' => "shifts#manager", :as => :manager_root
+  match '/manager' => "splash#index", :as => :manager_root
 
   devise_for :employees do
     get '/', :to => "devise/sessions#new"
@@ -20,9 +20,10 @@ Takeone::Application.routes.draw do
   root :to => "devise/sessions#new"
   match '/retail' => "splash#index", :as => :employee_root
 
-  match "/manager" => "shifts#manager"
-  match "/admin" => "holidays#manager"
-  match "workshoplist" =>  'workshops#workshoplist'
+  match "/shiftswitches" => "shifts#manager"
+  match "/holidayoverview" => "holidays#manager"
+  match "/workshoplist" =>  'workshops#workshoplist'
+  match "/allrequests" =>  'requests#index'
 
   match "/shifts/shift_taken/:id" => "shifts#shift_taken"
   

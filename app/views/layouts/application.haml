@@ -30,15 +30,18 @@
             =@title
         %div#sidebar.span-6.last
           = link_to image_tag('home.png') + "Home", employee_root_path
-          = link_to image_tag('switch.png') + "Shift Switch", shifts_path
-          = #link_to image_tag('request.png') + "Request Off", new_request_path
-          = link_to image_tag('holiday.png') + "Holiday Request", new_holiday_path
           = link_to image_tag('development.png') + "Development", workshops_path
           -if manager_signed_in?
-            = link_to 'Manager Profile', edit_manager_registration_path
+            = link_to image_tag('switch.png') + "Overall Shift Switches", "/shiftswitches"
+            = link_to image_tag('request.png') + "Request List", "/allrequests"
+            = link_to image_tag('holiday.png') + "Holiday Overview", "/holidayoverview"
+            = link_to image_tag('profile.png') + 'Manager Profile', edit_manager_registration_path
             = link_to image_tag('power.png') + "Sign out", destroy_manager_session_path
           -else
-            = link_to 'Employee Profile', edit_employee_registration_path
+            = link_to image_tag('switch.png') + "Shift Switch", shifts_path
+            = link_to image_tag('request.png') + "Request Off", new_request_path
+            = link_to image_tag('holiday.png') + "Holiday Request", new_holiday_path
+            = link_to image_tag('profile.png') + 'Employee Profile', edit_employee_registration_path
             = link_to image_tag('power.png') + "Sign out", destroy_employee_session_path
 
           //Signed in as

@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.xml
   def index
+    @title = "Request List"
     @requests = Request.all
     #@request = @requests.find(params[:request_id])
     #@hours = @request.hours
