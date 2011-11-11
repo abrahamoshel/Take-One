@@ -13,7 +13,7 @@ class WorkshopsController < ApplicationController
 
   def index
     @title = "Available Workshops"
-    @workshops = Workshop.find(:all, :conditions => ["startDate >= ?", Date.today - 1], :order => "startDate DESC", :limit => 30)
+    @workshops = Workshop.find(:all, :conditions => {:startDate =>  Date.today - 2...Date.today + 365}, :order => "startDate DESC", :limit => 30)
 
     #ate => Date.today - 2...Date.today + 65
     respond_to do |format|
