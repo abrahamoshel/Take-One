@@ -1,4 +1,0 @@
-USER_NAME, PASSWORD = "applenma", "NMA"+Date.today.strftime('%m%d%y')
-
-S3_KEY, S3_SECRET = "AKIAJXXDGJNQEPQ4MWTA", "U86qTHlGITIgGHzWre0OGgrWYHoq95N0raRW8HTk"
-
